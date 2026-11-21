@@ -1,7 +1,7 @@
 import re
 from datetime import date
 
-from . import DAYS, item, page_lines
+from . import DAYS, item, nearest_date, page_lines
 
 MONTHS = ["ledna", "února", "března", "dubna", "května", "června", "července",
           "srpna", "září", "října", "listopadu", "prosince"]
@@ -16,11 +16,9 @@ def _price(lines, pattern):
 
 
 def _date(text, today):
-    """'23. listopadu' → date; the year is the one that puts it nearest to today."""
+    """'23. listopadu' → date"""
     m = re.match(r"(\d{1,2})\.\s*(\w+)", text)
-    day, month = int(m.group(1)), MONTHS.index(m.group(2)) + 1
-    candidates = [date(today.year + dy, month, day) for dy in (-1, 0, 1)]
-    return min(candidates, key=lambda d: abs(d - today))
+    return nearest_date(int(m.group(1)), MONTHS.index(m.group(2)) + 1, today)
 
 
 def parse(html, today=None):

@@ -1,4 +1,4 @@
-from .parsers import bohem, profirest, ukolji, zlatahvezda
+from .parsers import bohem, oaza, profirest, rettigovka, snyt, ukolji, zlatahvezda
 
 RESTAURANTS = [
     {"id": "ukolji", "name": "U Kolji", "url": "https://ukolji.cz/",
@@ -11,4 +11,11 @@ RESTAURANTS = [
      "menu_url": "https://www.jidlolit.cz/denni-menu", "parse": profirest.parse, "proxy": True},
     {"id": "danicola", "name": "Da Nicola", "url": "https://www.danicola.cz/",
      "menu_url": "https://www.danicola.cz/denni-menu", "parse": profirest.parse, "proxy": True},
+    {"id": "snyt", "name": "Šnyt", "url": "https://www.snyt-hospoda.cz/",
+     "menu_url": "https://www.snyt-hospoda.cz/", "parse": snyt.parse},
+    {"id": "oaza", "name": "Oáza zdraví", "url": "https://www.oaza-zdravi.cz/",
+     "menu_url": "https://www.oaza-zdravi.cz/foodlist", "parse": oaza.parse},
+    # the menu page only frames this URL
+    {"id": "rettigovka", "name": "Rettigovka", "url": "http://www.rettigovka.eu/",
+     "menu_url": "http://www.rettigovka.eu/is/eu/index.php", "parse": rettigovka.parse},
 ]

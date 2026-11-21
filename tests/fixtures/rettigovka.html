@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="cs">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Rettigovka - jídelníček</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" href="../css/font-awesome.css" />
+  <link rel="stylesheet" href="css/loading-bar.min.css" />
+  <script src="js/jquery-1.12.1.min.js"></script>
+ </head>
+ <body class="eu" ng-controller="AppCtrl">
+  <div class="main">
+   <div class="container">
+
+    <!--<img class="logo" src="http://www.rettigovka.eu/wp-content/uploads/2013/10/logo_nové.jpg" alt="Rettigovka" width="179" height="129">-->
+    <h1>Jídelníček</h1>
+	<h4 class="weektitle">
+	<a href="?s=2026-11-16" title="Předchozí týden"><em class="fa fa-angle-left"></em></a>
+     <span>
+23. listopad 2026 &#8212; 27. listopad 2026     </span>
+	 <a href="?s=2026-11-30" title="Další týden"><em class="fa fa-angle-right"></em></a>
+	</h4>
+
+      <div class="alert alert-warning">Pro objednání se prosím <a href="?login=1&s=2026-11-23">přihlaste</a>.</div>
+
+
+
+
+
+
+      <a name="bfa2667"></a>
+      <table class="table billoffare"> 
+        <tbody>
+          <tr>
+            <th colspan="4">
+              <h2 class="daytitle">Pondělí 23. 11. 2026</h2>
+            </th>
+          </tr>
+	  <tr>
+		<td class="ordnum"></td>
+		<td>
+		  Zelná polévka bílá		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje mléko a  pšenici		  </div>
+		</td>
+		<td class="price">35 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">1.</td>
+		<td>
+		  Přírodní vepřový plátek, rýže parboiled		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje pšenici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">2.</td>
+		<td>
+		  Kuřecí paprikáš s haluškami		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  mléko a  pšenici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">3.</td>
+		<td>
+		  Bramborák se zelným salátem a křenem		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce a  pšenici		  </div>
+		</td>
+		<td class="price">145 Kč</td>
+	  </tr>
+	</tbody>
+      </table>
+      <a name="bfa2668"></a>
+      <table class="table billoffare"> 
+        <tbody>
+          <tr>
+            <th colspan="4">
+              <h2 class="daytitle">Úterý 24. 11. 2026</h2>
+            </th>
+          </tr>
+	  <tr>
+		<td class="ordnum"></td>
+		<td>
+		  Frankfurtská		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje pšenici		  </div>
+		</td>
+		<td class="price">35 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">1.</td>
+		<td>
+		  Španělský ptáček s rýží		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  hořčici a  pšenici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">2.</td>
+		<td>
+		  Kuřecí karbanátek s opečeným bramborem, dip		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje mléko a  hořčici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">3.</td>
+		<td>
+		  Celozrnný slaný koláč se zeleninou a balkánským sýrem		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje mléko a  pšenici		  </div>
+		</td>
+		<td class="price">80 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">4.</td>
+		<td>
+		  Jablkové knedlíčky se smetanou		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje mléko a  pšenici		  </div>
+		</td>
+		<td class="price">145 Kč</td>
+	  </tr>
+	</tbody>
+      </table>
+      <a name="bfa2669"></a>
+      <table class="table billoffare"> 
+        <tbody>
+          <tr>
+            <th colspan="4">
+              <h2 class="daytitle">Středa 25. 11. 2026</h2>
+            </th>
+          </tr>
+	  <tr>
+		<td class="ordnum"></td>
+		<td>
+		  Zeleninová polévka s kapáním		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  mléko,  celer a  pšenici		  </div>
+		</td>
+		<td class="price">35 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">1.</td>
+		<td>
+		  Vepřové na celeru s jablky a bramborovými noky		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  celer a  pšenici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">2.</td>
+		<td>
+		  Špagety s kuřecím masem s drcenými rajčaty, sypané sýrem		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje mléko a  pšenici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">3.</td>
+		<td>
+		  Houbový guláš z hlívy, kváskový chléb		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje mléko,  pšenici a  žito		  </div>
+		</td>
+		<td class="price">145 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">4.</td>
+		<td>
+		  Kváskový chléb		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje sezam,  pšenici a  žito		  </div>
+		</td>
+		<td class="price">78 Kč</td>
+	  </tr>
+	</tbody>
+      </table>
+      <a name="bfa2670"></a>
+      <table class="table billoffare"> 
+        <tbody>
+          <tr>
+            <th colspan="4">
+              <h2 class="daytitle">Čtvrtek 26. 11. 2026</h2>
+            </th>
+          </tr>
+	  <tr>
+		<td class="ordnum"></td>
+		<td>
+		  Hovězí polévka z mletého masa		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje celer		  </div>
+		</td>
+		<td class="price">35 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">1.</td>
+		<td>
+		  Stroganoff, šťouchané brambory		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje mléko a  pšenici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">2.</td>
+		<td>
+		  Těstoviny zapečené s kuřecím masem a mozzarellou		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  mléko a  pšenici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">3.</td>
+		<td>
+		  Mrkvové placky s tofu, brambory, dip		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  sóju,  mléko,  hořčici,  pšenici,  oves a  vlašský ořech		  </div>
+		</td>
+		<td class="price">145 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">4.</td>
+		<td>
+		  Koláč s mákem, tvarohem a povidly		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  mléko a  pšenici		  </div>
+		</td>
+		<td class="price">30 Kč</td>
+	  </tr>
+	</tbody>
+      </table>
+      <a name="bfa2671"></a>
+      <table class="table billoffare"> 
+        <tbody>
+          <tr>
+            <th colspan="4">
+              <h2 class="daytitle">Pátek 27. 11. 2026</h2>
+            </th>
+          </tr>
+	  <tr>
+		<td class="ordnum"></td>
+		<td>
+		  Špenátová s kuskusem		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje pšenici		  </div>
+		</td>
+		<td class="price">35 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">1.</td>
+		<td>
+		  Šunkafleky		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  mléko a  pšenici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">2.</td>
+		<td>
+		  Smažený kuřecí řízek, bramborový salát		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  mléko a  pšenici		  </div>
+		</td>
+		<td class="price">150 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">3.</td>
+		<td>
+		  Bulgurové placky s balkánským sýrem, zeleninový salát		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  mléko a  pšenici		  </div>
+		</td>
+		<td class="price">145 Kč</td>
+	  </tr>
+	  <tr>
+		<td class="ordnum">4.</td>
+		<td>
+		  Margotkový dort řez		  <div class="alergens" ng-if="fare.dish.alergens">
+			Obsahuje vejce,  sóju,  mléko a  pšenici		  </div>
+		</td>
+		<td class="price">45 Kč</td>
+	  </tr>
+
+
+
+
+<script language='javascript' type='text/javascript'>
+	$("input.fare-count-input").on("change", function() {
+		if (! this.id)
+			return;
+		var dish_id = this.id.replace(/^cnt_/, "");
+		var a = $("#boxed_" + dish_id);
+		if (! a || a.length === 0)
+			return;
+		var box_count_input = a[0];
+		var dish_count = $(this).val();
+		if (parseInt(dish_count) > 0)
+			$(box_count_input).attr("required", "required");
+		else
+			$(box_count_input).removeAttr("required");
+	});
+
+	function refreshAt(hours, minutes, seconds) {
+		var now = new Date();
+		var then = new Date();
+
+		if(now.getHours() > hours ||
+			(now.getHours() == hours && now.getMinutes() > minutes) ||
+			now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
+			then.setDate(now.getDate() + 1);
+		}
+		then.setHours(hours);
+		then.setMinutes(minutes);
+		then.setSeconds(seconds);
+
+		var timeout = (then.getTime() - now.getTime());
+		setTimeout(function() { window.location.reload(true); }, timeout);
+	}
+	refreshAt(9,0,0);
+</script>
+
+
+
+
+
+
+   </div>
+  </div>
+  <script language='javascript' type='text/javascript'>
+	function runningInIFrame () {
+		try {
+			return window.self !== window.top;
+		} catch (e) {
+			return true;
+		}
+	}
+
+	function makeDefaultFontSmaller () {
+		var sheet = (function() {
+			// Create the <style> tag
+			var style = document.createElement("style");
+
+			// WebKit hack :(
+			style.appendChild(document.createTextNode(""));
+
+			// Add the <style> element to the page
+			document.head.appendChild(style);
+
+			return style.sheet;
+		})();
+		sheet.insertRule("* { font-size: 16px; }", 0);
+	}
+	if (runningInIFrame) {
+		// makeDefaultFontSmaller();
+		parent.iframeLoaded();
+	}
+ </script>
+ </body>
+</html>
+<!--
+
+-->

@@ -1,7 +1,7 @@
 from datetime import date
 from pathlib import Path
 
-from scraper.parsers import bohem, profirest, ukolji, zlatahvezda
+from scraper.parsers import bohem, oaza, profirest, rettigovka, snyt, ukolji, zlatahvezda
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -115,3 +115,44 @@ def test_profirest_skips_zero_price_announcements():
     assert items[0]["name"] == "Frankfurtská" and items[0]["price"] == 66
     assert len(items) == 11
     assert all(i["price"] for i in items)
+
+
+def test_snyt_week():
+    days = snyt.parse(load("snyt.html"), today=date(2026, 11, 21))
+    assert [d["date"] for d in days] == [
+        "2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20"]
+    mon = days[0]["items"]
+    assert mon[:3] == [
+        {"type": "soup", "label": None, "name": "Hráškový krém", "price": 45, "allergens": None},
+        {"type": "soup", "label": None, "name": "Vývar s nudlemi", "price": 45, "allergens": None},
+        {"type": "main", "label": "1", "name": "150g Obalovaný květák, vařené brambory, tatarská omáčka",
+         "price": 179, "allergens": None},
+    ]
+    assert [i["price"] for i in days[4]["items"] if i["type"] == "main"] == [189, 179, 239]
+
+
+def test_oaza_week_with_allergen_numbers():
+    days = oaza.parse(load("oaza.html"))
+    assert [d["date"] for d in days] == [
+        "2026-11-23", "2026-11-24", "2026-11-25", "2026-11-26", "2026-11-27"]
+    assert sum(len(d["items"]) for d in days) == 57
+    mon = days[0]["items"]
+    assert mon[0] == {"type": "soup", "label": None, "name": "Květáková s kokosovým mlékem",
+                      "price": 45, "allergens": ["8", "9"]}
+    assert mon[2] == {"type": "main", "label": "Jídlo VS", "name": "Polentový nákyp se zeleninou",
+                      "price": 140, "allergens": ["6", "9"]}
+    assert mon[7]["allergens"] is None  # Salát II: only tags, no allergen numbers
+    assert mon[-1] == {"type": "dessert", "label": None, "name": "Maková koule",
+                       "price": 20, "allergens": ["8"]}
+
+
+def test_rettigovka_week():
+    days = rettigovka.parse(load("rettigovka.html"))
+    assert [d["date"] for d in days] == [
+        "2026-11-23", "2026-11-24", "2026-11-25", "2026-11-26", "2026-11-27"]
+    mon = days[0]["items"]
+    assert mon[0] == {"type": "soup", "label": None, "name": "Zelná polévka bílá",
+                      "price": 35, "allergens": ["mléko a pšenici"]}
+    assert mon[1] == {"type": "main", "label": "1", "name": "Přírodní vepřový plátek, rýže parboiled",
+                      "price": 150, "allergens": ["pšenici"]}
+    assert [i["label"] for i in days[4]["items"]] == [None, "1", "2", "3", "4"]
