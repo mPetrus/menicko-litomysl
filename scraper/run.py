@@ -28,14 +28,23 @@ def scrape(restaurant):
     return entry
 
 
+def keep_previous(restaurants, previous):
+    """For a restaurant that failed now, reuse its last good menu, marked stale."""
+    old = {r["id"]: r for r in (previous or {}).get("restaurants", []) if r["status"] == "ok"}
+    return [{**old[r["id"]], "stale": True} if r["status"] == "error" and r["id"] in old else r
+            for r in restaurants]
+
+
 def main():
+    # in CI this is the currently published file, downloaded by the workflow
+    previous = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else None
     data = {
         "updated": datetime.now(ZoneInfo("Europe/Prague")).isoformat(timespec="minutes"),
-        "restaurants": [scrape(r) for r in RESTAURANTS],
+        "restaurants": keep_previous([scrape(r) for r in RESTAURANTS], previous),
     }
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     for r in data["restaurants"]:
-        print(f"{r['id']}: {r['status']}, {len(r['days'])} days")
+        print(f"{r['id']}: {r['status']}{' (stale)' if r.get('stale') else ''}, {len(r['days'])} days")
 
 
 if __name__ == "__main__":

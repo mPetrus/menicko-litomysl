@@ -29,6 +29,8 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: python -m pytest -q
+      - name: Download the published menus (fallback when a restaurant fails)
+        run: curl -sf "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/menus.json" -o site/menus.json || true
       - run: python -m scraper.run
       - uses: actions/upload-pages-artifact@v3
         with:

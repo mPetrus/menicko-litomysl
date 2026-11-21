@@ -12,11 +12,6 @@ const el = (tag, cls, text) => {
 
 let data, selectedDate;
 
-function pickDefaultDate(dates) {
-  const today = iso(new Date());
-  return dates.find((d) => d >= today) ?? dates[dates.length - 1];
-}
-
 const hasMatch = (date, query) => data.restaurants.some((r) =>
   r.days.some((d) => d.date === date && d.items.some((i) => norm(i.name).includes(query))));
 
@@ -53,14 +48,20 @@ function renderCard(r, query) {
   h2.append(a);
   card.append(h2);
 
-  if (r.status !== "ok") {
-    if (query) return null;
-    card.append(el("p", "note", "Menu se nepodařilo načíst. "));
+  const note = (text) => {
+    const p = el("p", "note", text + " ");
     const link = el("a", null, "Podívejte se na web restaurace");
     link.href = r.menu_url;
-    card.lastChild.append(link);
+    p.append(link);
+    return p;
+  };
+
+  if (r.status !== "ok") {
+    if (query) return null;
+    card.append(note("Menu se nepodařilo načíst."));
     return card;
   }
+  if (r.stale) card.append(note("Menu se teď nepodařilo aktualizovat, zobrazujeme poslední načtené."));
 
   const day = r.days.find((d) => d.date === selectedDate);
   const items = (day?.items ?? [])
@@ -68,7 +69,7 @@ function renderCard(r, query) {
     .sort((x, y) => TYPE_ORDER[x.type] - TYPE_ORDER[y.type]);
   if (!items.length) {
     if (query) return null;
-    card.append(el("p", "note", "Na tento den menu není."));
+    card.append(el("p", "note", selectedDate ? "Na tento den menu není." : "Menu na tento týden zatím nejsou."));
     return card;
   }
   const ul = el("ul");
@@ -78,8 +79,11 @@ function renderCard(r, query) {
 }
 
 function render() {
-  const dates = [...new Set(data.restaurants.flatMap((r) => r.days.map((d) => d.date)))].sort();
-  if (!dates.includes(selectedDate)) selectedDate = pickDefaultDate(dates);
+  const today = iso(new Date());
+  const dates = [...new Set(data.restaurants.flatMap((r) => r.days.map((d) => d.date)))]
+    .filter((d) => d >= today) // never offer an old menu as current
+    .sort();
+  if (!dates.includes(selectedDate)) selectedDate = dates[0];
   const query = norm(document.getElementById("search").value.trim());
   renderDays(dates, query);
   const cards = data.restaurants.map((r) => renderCard(r, query)).filter(Boolean);

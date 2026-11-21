@@ -34,7 +34,7 @@ def parse(html, today=None):
     price_cd = _price(lines, r"menu C / D")
     price_special = _price(lines, r"Týdenní speciál s")
     price_dessert = _price(lines, r"dezert")
-    special = lines[lines.index("Týdenní speciál") + 1]
+    special = lines[lines.index("Týdenní speciál") + 1] if "Týdenní speciál" in lines else None
 
     days, current, pending = [], None, None  # pending: what the next line belongs to
     for line in lines:
@@ -58,7 +58,8 @@ def parse(html, today=None):
             current["items"].append(item("main", "", price_ab if label in "AB" else price_cd, label))
             pending = "main"
         elif line.startswith("Dezert týdne"):
-            current["items"].append(item("main", special, price_special, "Speciál"))
+            if special:
+                current["items"].append(item("main", special, price_special, "Speciál"))
             pending = "dessert"
         elif pending == "main":
             dish = current["items"][-1]

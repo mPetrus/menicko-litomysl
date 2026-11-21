@@ -47,6 +47,19 @@ def test_ukolji_year_rollover():
     assert days[0]["date"] == "2027-01-02"
 
 
+def test_ukolji_without_weekly_special():
+    html = load("ukolji.html").replace(">Týdenní speciál</", "><")
+    days = ukolji.parse(html, today=date(2026, 11, 21))
+    assert len(days) == 5
+    assert [i["label"] for i in days[0]["items"] if i["type"] == "main"] == ["A", "B", "C"]
+
+
+def test_zlatahvezda_new_year_week():
+    # the year printed in the header belongs to the last day
+    html = load("zlatahvezda.html").replace("23.11. - 27.11. 2026", "29.12. - 2.1. 2027")
+    assert zlatahvezda.parse(html)[0]["date"] == "2026-12-29"
+
+
 def test_zlatahvezda_week():
     days = zlatahvezda.parse(load("zlatahvezda.html"))
     assert [d["date"] for d in days] == [

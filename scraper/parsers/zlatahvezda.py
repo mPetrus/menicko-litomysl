@@ -6,10 +6,11 @@ from . import DAYS, item, page_lines
 
 def parse(html):
     lines = page_lines(html)
-    # week header, e.g. "23.11. - 27.11. 2026"
-    i, monday = next((i, m) for i, line in enumerate(lines)
-                     if (m := re.fullmatch(r"(\d{1,2})\.(\d{1,2})\. - .* (\d{4})", line)))
-    monday = date(int(monday.group(3)), int(monday.group(2)), int(monday.group(1)))
+    # week header, e.g. "23.11. - 27.11. 2026"; the year belongs to the last day
+    i, m = next((i, m) for i, line in enumerate(lines)
+                if (m := re.fullmatch(r"(\d{1,2})\.(\d{1,2})\. - \d{1,2}\.(\d{1,2})\. (\d{4})", line)))
+    day, month, end_month, year = map(int, m.groups())
+    monday = date(year - (month > end_month), month, day)
 
     days, current, section = [], None, None
     for line in lines[i + 1:]:
