@@ -1,0 +1,437 @@
+{
+ "updated": "2026-11-21T11:30+01:00",
+ "restaurants": [
+  {
+   "id": "ukolji",
+   "name": "U Kolji",
+   "url": "https://ukolji.cz/",
+   "menu_url": "https://ukolji.cz/",
+   "status": "ok",
+   "days": [
+    {
+     "date": "2026-11-23",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Boršč",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Krémová česnečka s chlebovými krutony",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "A",
+       "name": "Smažený Camembert, belgické hranolky, tatarská omáčka",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "B",
+       "name": "Vepřová plec na houbách, šťouchaný brambor s cibulkou",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "C",
+       "name": "Vepřová panenka 55°C, sýrová omáčka, fritované batáty",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "Speciál",
+       "name": "Filet z lososa s grilovanou zeleninou, bylinková omáčka",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "dessert",
+       "label": null,
+       "name": "Čokoládový Fondant, Creme fraiche",
+       "price": 115,
+       "allergens": null
+      }
+     ]
+    },
+    {
+     "date": "2026-11-24",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Boršč",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Polévka z fazolových lusků",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "A",
+       "name": "Holandský řízek, bramborová kaše, kompot",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "B",
+       "name": "Gratinované těstoviny s kuřecím masem a sýrem čedar, salát z červené řepy",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "C",
+       "name": "Bažantí prso na houbovém krupotu, cibulka",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "Speciál",
+       "name": "Filet z lososa s grilovanou zeleninou, bylinková omáčka",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "dessert",
+       "label": null,
+       "name": "Čokoládový Fondant, Creme fraiche",
+       "price": 115,
+       "allergens": null
+      }
+     ]
+    },
+    {
+     "date": "2026-11-25",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Boršč",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Bob guláš",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "A",
+       "name": "Vídeňská roštěná, dušená rýže",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "B",
+       "name": "Kuřecí stehenní steak, omáčka ze zeleného pepře, šťouchaný brambor",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "C",
+       "name": "Filet z candáta na másle, zeleninový kuskus, bylinková omáčka",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "Speciál",
+       "name": "Filet z lososa s grilovanou zeleninou, bylinková omáčka",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "dessert",
+       "label": null,
+       "name": "Čokoládový Fondant, Creme fraiche",
+       "price": 115,
+       "allergens": null
+      }
+     ]
+    },
+    {
+     "date": "2026-11-26",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Boršč",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Květákový krém",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "A",
+       "name": "Masové kuličky v rajské omáčce, houskový knedlík",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "B",
+       "name": "Varenyky – vařené taštičky s bramborovým pyré podávané s restovaným uzeným masem a cibulkou",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "C",
+       "name": "Kreveta Black Tiger v tempuře, variace trhaných salátů, bagetka",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "D",
+       "name": "California sushi kaviár & uzený losos,wasabi, wakame, nakládaný zázvor, sojová omáčka",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "Speciál",
+       "name": "Filet z lososa s grilovanou zeleninou, bylinková omáčka",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "dessert",
+       "label": null,
+       "name": "Čokoládový Fondant, Creme fraiche",
+       "price": 115,
+       "allergens": null
+      }
+     ]
+    },
+    {
+     "date": "2026-11-27",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Boršč",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Hovězí vývar s nudlemi a játrovými knedlíčky",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "A",
+       "name": "Slepice na paprice, těstoviny",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "B",
+       "name": "Vepřová játra na roštu se slaninou, belgické hranolky, tatarská omáčka",
+       "price": 245,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "C",
+       "name": "Filírovaný hovězí steak, řepné pyré, čedarová kroketa",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "D",
+       "name": "Poke Bowl Crispy Chicken – sushi rýže, Crispy kuřecí prsa, čerstvá zelenina, ředkev, dressing, sezam",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "Speciál",
+       "name": "Filet z lososa s grilovanou zeleninou, bylinková omáčka",
+       "price": 275,
+       "allergens": null
+      },
+      {
+       "type": "dessert",
+       "label": null,
+       "name": "Čokoládový Fondant, Creme fraiche",
+       "price": 115,
+       "allergens": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zlatahvezda",
+   "name": "Zlatá Hvězda",
+   "url": "https://zlatahvezda.com/",
+   "menu_url": "https://zlatahvezda.com/poledni-menu/",
+   "status": "ok",
+   "days": [
+    {
+     "date": "2026-11-23",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Hovězí vývar s jarní zeleninou a vejcem",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "a",
+       "name": "Kuřecí steak | omáčka z pečených paprik | mačkané brambory | salátek",
+       "price": 220,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "b",
+       "name": "Bratislavská vepřová plec | karlovarský knedlík",
+       "price": 220,
+       "allergens": null
+      }
+     ]
+    },
+    {
+     "date": "2026-11-24",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Čočková polévka s uzeninou",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "a",
+       "name": "Vepřová krkovice pečená po selsku | pyré z červeného zelí | pečené brambory ve slupce",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "b",
+       "name": "Pikantní flamendr se zeleninou a křenem | hranolky",
+       "price": null,
+       "allergens": null
+      }
+     ]
+    },
+    {
+     "date": "2026-11-25",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Kuřecí vývar s masem a zeleninou | nudle",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "a",
+       "name": "Vepřový karbanátek | pyré z brambor a červené řepy",
+       "price": 220,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "b",
+       "name": "Srbské drůbeží rizoto | sýr Gouda | kyselá okurka",
+       "price": 220,
+       "allergens": null
+      }
+     ]
+    },
+    {
+     "date": "2026-11-26",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Dýňový krém s tymiánem | krutony",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "a",
+       "name": "Hovězí krk | rajská omáčka | tarhoňa",
+       "price": 220,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "b",
+       "name": "Králičí stehno na dijonské omáčce | šťouchané brambory | polníček",
+       "price": 220,
+       "allergens": null
+      }
+     ]
+    },
+    {
+     "date": "2026-11-27",
+     "items": [
+      {
+       "type": "soup",
+       "label": null,
+       "name": "Česnečka s bramborem a vejcem | opečený chléb",
+       "price": null,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "a",
+       "name": "Špíz z vepřové panenky s anglickou slaninou | parmezánovo-česnekový dip | hranolky",
+       "price": 220,
+       "allergens": null
+      },
+      {
+       "type": "main",
+       "label": "b",
+       "name": "Krůtí segedínský guláš | houskový knedlík",
+       "price": 220,
+       "allergens": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meníčko Litomyšl</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Meníčko Litomyšl</h1>
+    <p class="updated" id="updated"></p>
+    <input type="search" id="search" placeholder="Hledat jídlo, např. knedlík" autocomplete="off">
+    <nav id="days" aria-label="Dny"></nav>
+  </header>
+  <main id="menus"></main>
+  <p class="empty" id="empty" hidden>Nic nenalezeno.</p>
+  <footer>Menu se přebírají z webů restaurací. Ceny a nabídku vždy ověřte u restaurace.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
