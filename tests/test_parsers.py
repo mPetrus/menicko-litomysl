@@ -1,7 +1,7 @@
 from datetime import date
 from pathlib import Path
 
-from scraper.parsers import ukolji, zlatahvezda
+from scraper.parsers import bohem, profirest, ukolji, zlatahvezda
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -81,3 +81,37 @@ def test_zlatahvezda_week():
     assert tue[2] == {"type": "main", "label": "b",
                       "name": "Pikantní flamendr se zeleninou a křenem | hranolky",
                       "price": None, "allergens": None}
+
+
+def test_bohem_weekly_menu_applies_to_every_weekday():
+    days = bohem.parse(load("bohem.html"))
+    assert [d["date"] for d in days] == [
+        "2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20"]
+    items = days[0]["items"]
+    assert all(d["items"] == items for d in days)
+    assert len(items) == 8
+    assert items[0] == {"type": "soup", "label": None, "name": "Kuřecí vývar, zelenina, tarhoňa, pažitka",
+                        "price": 55, "allergens": None}
+    assert items[2] == {"type": "main", "label": None,
+                        "name": "Hovězí rib eye steak, estragonová omáčka, pečené grenaille, glazovaná mrkev",
+                        "price": 265, "allergens": None}
+    assert items[-1]["name"] == "Medové lívance, borůvkový žahour, zakysaná smetana"
+    assert items[-1]["price"] == 195
+
+
+def test_profirest_todays_offer_with_allergens():
+    days = profirest.parse(load("danicola.html"), today=date(2026, 11, 21))
+    assert [d["date"] for d in days] == ["2026-11-21"]
+    items = days[0]["items"]
+    assert len(items) == 5
+    assert items[0] == {"type": "main", "label": None,
+                        "name": "Dýňovo-kaštanový krém s krutony a sušenými jablkami",
+                        "price": 35, "allergens": ["Obiloviny", "Mléko včetně laktózy", "Celer"]}
+    assert items[1]["allergens"] is None
+
+
+def test_profirest_skips_zero_price_announcements():
+    items = profirest.parse(load("underground.html"), today=date(2026, 11, 21))[0]["items"]
+    assert items[0]["name"] == "Frankfurtská" and items[0]["price"] == 66
+    assert len(items) == 11
+    assert all(i["price"] for i in items)

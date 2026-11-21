@@ -32,8 +32,8 @@ function renderItem(item) {
   if (item.label) name.append(el("b", null, item.label + " "));
   name.append(item.name);
   li.append(name);
-  if (item.allergens?.length) li.append(el("span", "allergens", "alergeny " + item.allergens.join(", ")));
   if (item.price != null) li.append(el("span", "price", item.price + " Kč"));
+  if (item.allergens?.length) li.append(el("span", "allergens", "alergeny " + item.allergens.join(", ")));
   return li;
 }
 
