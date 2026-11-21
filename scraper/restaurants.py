@@ -8,7 +8,7 @@ RESTAURANTS = [
     {"id": "bohem", "name": "Bohém (Hotel Aplaus)", "url": "https://www.hotelaplaus.cz/",
      "menu_url": "https://www.hotelaplaus.cz/cs/m-24-tydenni-menu", "parse": bohem.parse},
     {"id": "underground", "name": "Underground", "url": "https://www.jidlolit.cz/",
-     "menu_url": "https://www.jidlolit.cz/denni-menu", "parse": profirest.parse},
+     "menu_url": "https://www.jidlolit.cz/denni-menu", "parse": profirest.parse, "proxy": True},
     {"id": "danicola", "name": "Da Nicola", "url": "https://www.danicola.cz/",
-     "menu_url": "https://www.danicola.cz/denni-menu", "parse": profirest.parse},
+     "menu_url": "https://www.danicola.cz/denni-menu", "parse": profirest.parse, "proxy": True},
 ]

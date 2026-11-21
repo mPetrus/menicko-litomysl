@@ -9,6 +9,10 @@ Restaurants: U Kolji, Zlatá Hvězda, Bohém (Hotel Aplaus), Underground, Da Nic
 - `site/` is a static page (`index.html`, `app.js`, `style.css`) that renders that JSON.
 - `.github/workflows/update.yml` runs the scraper every weekday at 7:00 and 10:00 (Prague, winter time) and publishes `site/` to GitHub Pages.
 
+## Proxy for blocked sites
+Underground and Da Nicola drop connections from GitHub's servers, so they are fetched through a Cloudflare Worker (`proxy/worker.js`, deployed at `menicko-proxy.martin-norty.workers.dev`). It only forwards the hosts listed in `ALLOWED`. To redeploy after a change: `cd proxy && npx wrangler deploy`.
+Zlatá Hvězda shows a CAPTCHA to both GitHub and Cloudflare, so the site only links to it.
+
 ## Run locally
 ```bash
 python3 -m venv .venv
