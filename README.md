@@ -2,8 +2,8 @@
 
 Daily lunch menus from Litomyšl restaurants on one page, with search. The menus come from each restaurant's own website (never from menicka.cz).
 
-Restaurants: U Kolji, Zlatá Hvězda, Bohém (Hotel Aplaus), Underground, Da Nicola, Šnyt, Oáza zdraví, Rettigovka.
-Not included: U Medvěda (PDF), Karlov and Plums (menu is an image), Veselka (only a menicka.cz widget).
+Restaurants: U Kolji, Zlatá Hvězda, Bohém (Hotel Aplaus), Underground, Da Nicola, Šnyt, Oáza zdraví, Rettigovka, U Medvěda (from its weekly PDF).
+Not included: Karlov and Plums (menu is an image), Veselka (only a menicka.cz widget).
 
 ## How it works
 - `scraper/` downloads each restaurant's menu page and parses it into `site/menus.json`.

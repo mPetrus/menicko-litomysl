@@ -1,4 +1,4 @@
-from .parsers import bohem, oaza, profirest, rettigovka, snyt, ukolji, zlatahvezda
+from .parsers import bohem, oaza, profirest, rettigovka, snyt, ukolji, umedveda, zlatahvezda
 
 RESTAURANTS = [
     {"id": "ukolji", "name": "U Kolji", "url": "https://ukolji.cz/",
@@ -18,4 +18,6 @@ RESTAURANTS = [
     # the menu page only frames this URL
     {"id": "rettigovka", "name": "Rettigovka", "url": "http://www.rettigovka.eu/",
      "menu_url": "http://www.rettigovka.eu/is/eu/index.php", "parse": rettigovka.parse},
+    {"id": "umedveda", "name": "U Medvěda", "url": "https://www.umedveda.cz/",
+     "menu_url": "https://www.umedveda.cz/poledni-menu/", "parse": umedveda.parse},
 ]

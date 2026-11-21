@@ -1,7 +1,7 @@
 from datetime import date
 from pathlib import Path
 
-from scraper.parsers import bohem, oaza, profirest, rettigovka, snyt, ukolji, zlatahvezda
+from scraper.parsers import bohem, oaza, profirest, rettigovka, snyt, ukolji, umedveda, zlatahvezda
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -156,3 +156,30 @@ def test_rettigovka_week():
     assert mon[1] == {"type": "main", "label": "1", "name": "Přírodní vepřový plátek, rýže parboiled",
                       "price": 150, "allergens": ["pšenici"]}
     assert [i["label"] for i in days[4]["items"]] == [None, "1", "2", "3", "4"]
+
+
+def test_umedveda_finds_weekday_pdf_not_weekend_one():
+    url = umedveda.PDF_LINK.search(load("umedveda.html"))[0]
+    assert url.endswith("Poledni_menu_U_Medveda´´_23.11._-_27.11._2026.pdf")
+
+
+def test_umedveda_pdf_week():
+    days = umedveda.parse_pdf((FIXTURES / "umedveda.pdf").read_bytes(), today=date(2026, 11, 21))
+    assert [d["date"] for d in days] == [
+        "2026-11-23", "2026-11-24", "2026-11-25", "2026-11-26", "2026-11-27"]
+    mon = days[0]["items"]
+    assert [i["type"] for i in mon] == ["soup"] * 3 + ["main"] * 6
+    assert mon[0] == {"type": "soup", "label": None,
+                      "name": "Hovězí VÝVAR s masem, nudlemi (rýží - bez lepku) a bylinkami",
+                      "price": 65, "allergens": None}
+    assert mon[3] == {"type": "main", "label": "1",
+                      "name": "Pečené kuřecí STEHNO s jemnou smet.omáčkou na paprici, houskový knedlík / "
+                              "těstoviny kolínka",
+                      "price": 199, "allergens": None}
+    # Wednesday's 2nd soup line starts with a stray ". "
+    assert days[2]["items"][1]["name"] == "HRÁŠKOVÝ krém s párkem a opečenou houskou"
+    # Thursday's 3rd dish has a long run of spaces before its price
+    assert days[3]["items"][5]["price"] == 229
+    assert days[3]["items"][5]["name"].endswith("domácí cib.chléb")
+    # the permanent offer and children's menu after Friday are not part of the days
+    assert len(days[4]["items"]) == 9
