@@ -1,5 +1,6 @@
 import json
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -9,13 +10,27 @@ import requests
 from .restaurants import RESTAURANTS
 
 OUT = Path(__file__).resolve().parent.parent / "site" / "menus.json"
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; menicko-litomysl/1.0)"}
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/130.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "cs-CZ,cs;q=0.9,en;q=0.8",
+}
+
+
+def fetch(url):
+    # some sites rate-limit (HTTP 429); wait and retry a couple of times
+    for wait in (20, 60, None):
+        resp = requests.get(url, headers=HEADERS, timeout=30)
+        if resp.status_code != 429 or wait is None:
+            return resp
+        time.sleep(wait)
 
 
 def scrape(restaurant):
     entry = {k: restaurant[k] for k in ("id", "name", "url", "menu_url")}
     try:
-        resp = requests.get(restaurant["menu_url"], headers=HEADERS, timeout=30)
+        resp = fetch(restaurant["menu_url"])
         resp.raise_for_status()
         resp.encoding = "utf-8"
         days = restaurant["parse"](resp.text)
