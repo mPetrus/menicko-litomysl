@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  actions: write
   pages: write
   id-token: write
 
@@ -24,6 +25,10 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # GitHub disables scheduled workflows after 60 days without commits; re-enabling keeps it alive
+      - run: gh workflow enable update.yml
+        env:
+          GH_TOKEN: ${{ github.token }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

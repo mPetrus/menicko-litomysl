@@ -1,5 +1,4 @@
 const DAY_NAMES = ["Ne", "Po", "Út", "St", "Čt", "Pá", "So"];
-const TYPE_ORDER = { soup: 0, main: 1, dessert: 2 };
 
 const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const iso = (d) => d.toLocaleDateString("sv-SE"); // YYYY-MM-DD in local time
@@ -65,8 +64,7 @@ function renderCard(r, query) {
 
   const day = r.days.find((d) => d.date === selectedDate);
   const items = (day?.items ?? [])
-    .filter((i) => !query || norm(i.name).includes(query))
-    .sort((x, y) => TYPE_ORDER[x.type] - TYPE_ORDER[y.type]);
+    .filter((i) => !query || norm(i.name).includes(query));
   if (!items.length) {
     if (query) return null;
     card.append(el("p", "note", selectedDate ? "Na tento den menu není." : "Menu na tento týden zatím nejsou."));
