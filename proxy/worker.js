@@ -5,7 +5,7 @@ const ALLOWED = ["www.jidlolit.cz", "www.danicola.cz"]; // not an open proxy
 export default {
   async fetch(request) {
     const target = new URL(request.url).searchParams.get("url");
-    if (!target || !ALLOWED.includes(new URL(target).hostname)) {
+    if (!URL.canParse(target) || !ALLOWED.includes(new URL(target).hostname)) {
       return new Response("not allowed", { status: 403 });
     }
     return fetch(target, {

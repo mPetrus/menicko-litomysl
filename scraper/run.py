@@ -37,7 +37,10 @@ def keep_previous(restaurants, previous):
 
 def main():
     # in CI this is the currently published file, downloaded by the workflow
-    previous = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else None
+    try:
+        previous = json.loads(OUT.read_text(encoding="utf-8"))
+    except (OSError, ValueError):  # missing, cut off by a failed download, or not JSON
+        previous = None
     data = {
         "updated": datetime.now(ZoneInfo("Europe/Prague")).isoformat(timespec="minutes"),
         "restaurants": keep_previous([scrape(r) for r in RESTAURANTS], previous),

@@ -27,6 +27,5 @@ def parse(html):
                 j -= 1
             name, category = lines[j], lines[j - 1]
             type_ = "soup" if category == "Polévka" else "dessert" if category.startswith("Dezert") else "main"
-            current["items"].append(item(type_, name, price, category if type_ == "main" else None))
-            current["items"][-1]["allergens"] = allergens
+            current["items"].append(item(type_, name, price, category if type_ == "main" else None, allergens))
     return days

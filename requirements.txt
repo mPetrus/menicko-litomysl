@@ -1,4 +1,4 @@
-requests
-beautifulsoup4
-pytest
-pypdf
+requests==2.34.2
+beautifulsoup4==4.15.0
+pytest==9.2.0
+pypdf==7.1.1

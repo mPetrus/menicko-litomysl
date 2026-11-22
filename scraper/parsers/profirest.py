@@ -20,7 +20,6 @@ def parse(html, today=None):
         # shortcut: the page has no soup marker; soups come first and cost under 100 Kč,
         # so the leading cheap rows are soups. Revisit if a cheap starter ever opens the list.
         soup_row = price < 100 and all(i["type"] == "soup" for i in items)
-        dish = item("soup" if soup_row else "main", row.select_one(".menu-row-name").get_text(" ", strip=True), price)
-        dish["allergens"] = tag["title"].split(", ") if tag else None
-        items.append(dish)
+        items.append(item("soup" if soup_row else "main", row.select_one(".menu-row-name").get_text(" ", strip=True),
+                          price, allergens=tag["title"].split(", ") if tag else None))
     return [{"date": today.isoformat(), "items": items}] if items else []

@@ -38,15 +38,13 @@ def parse_text(text):
         elif m := re.fullmatch(r"(?:\S+\s*[|©]\s*)?(.+?)\s+(\d+) Kč", line):
             name, allergens = _allergens(m[1])
             dish = item("dessert" if section == "DEZERT TÝDNE" else "main", name, int(m[2]),
-                        "Tip týdne" if section == "TIP TÝDNE" else None)
-            dish["allergens"] = allergens
+                        "Tip týdne" if section == "TIP TÝDNE" else None, allergens)
             (weekly if section in ("TIP TÝDNE", "DEZERT TÝDNE") else days[-1]["items"]).append(dish)
             if section == "DEZERT TÝDNE":  # an event poster follows the menu
                 break
         elif section == "soup":
             name, allergens = _allergens(line)
-            days[-1]["items"].append(item("soup", name))
-            days[-1]["items"][-1]["allergens"] = allergens
+            days[-1]["items"].append(item("soup", name, allergens=allergens))
             section = None
     for d in days:
         d["items"] += weekly

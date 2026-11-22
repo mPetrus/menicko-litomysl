@@ -55,5 +55,5 @@ def week_monday(day, month, end_month, year):
     return date(year - (month > end_month), month, day)
 
 
-def item(type_, name, price=None, label=None):
-    return {"type": type_, "label": label, "name": name, "price": price, "allergens": None}
+def item(type_, name, price=None, label=None, allergens=None):
+    return {"type": type_, "label": label, "name": name, "price": price, "allergens": allergens}

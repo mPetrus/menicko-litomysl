@@ -18,8 +18,7 @@ def parse(html):
             allergens = [line.removeprefix("Obsahuje ")]
         elif m := re.fullmatch(r"(\d+) Kč", line):
             # the unnumbered first dish of each day is the soup
-            current["items"].append(item("main" if label else "soup", name, int(m[1]), label))
-            current["items"][-1]["allergens"] = allergens
+            current["items"].append(item("main" if label else "soup", name, int(m[1]), label, allergens))
             label, allergens = None, None
         else:
             name = line
