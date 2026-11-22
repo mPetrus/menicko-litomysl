@@ -38,7 +38,8 @@ def parse_items(text):
             section, parts = SECTIONS[line], []
         elif section and (m := re.fullmatch(r"(\d+) Kč", line)):
             desc = " ".join(parts[1:]).replace(" - ", ", ")  # the image separates with "·", OCR reads "-"
-            name = f"{parts[0]}, {desc[:1].lower()}{desc[1:]}" if desc else parts[0]
+            first = desc[:1].lower() if desc[1:2].islower() else desc[:1]  # keep "BBQ", lower "Krupicové"
+            name = f"{parts[0]}, {first}{desc[1:]}" if desc else parts[0]
             items.append(item(section, name, int(m[1])))
             parts = []
         elif section and line:

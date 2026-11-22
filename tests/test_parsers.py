@@ -198,3 +198,8 @@ def test_plums_ocr_items():
     assert items[5]["name"] == "Flank steak, celerové pyré, pečený celer na másle, miso omáčka celerové chipsy"
     assert items[5]["price"] == 390
     assert items[-1]["price"] == 119
+
+
+def test_plums_keeps_abbreviation_at_description_start():
+    text = "hlavní chody\nKuřecí křídla\nBBQ omáčka - hranolky\n189 Kč"
+    assert plums.parse_items(text)[0]["name"] == "Kuřecí křídla, BBQ omáčka, hranolky"
