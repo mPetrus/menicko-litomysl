@@ -10,19 +10,14 @@ on:
 permissions:
   contents: read
   actions: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: deploy
   cancel-in-progress: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       # GitHub disables scheduled workflows after 60 days without commits; re-enabling keeps it alive
@@ -37,13 +32,14 @@ jobs:
         run: sudo apt-get update -q && sudo apt-get install -y -q tesseract-ocr-ces imagemagick
       - run: python -m pytest -q
       - name: Download the published menus (fallback when a restaurant fails)
-        run: curl -sf "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/menus.json" -o site/menus.json || true
+        run: curl -sf "https://menicko-litomysl.pages.dev/menus.json" -o site/menus.json || true
       - run: python -m scraper.run
-      - uses: actions/upload-pages-artifact@v3
+      # Cloudflare Pages (https://menicko-litomysl.pages.dev); token and account id are repository secrets
+      - uses: cloudflare/wrangler-action@v3
         with:
-          path: site
-      - id: deploy
-        uses: actions/deploy-pages@v4
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy site --project-name=menicko-litomysl --branch=main
       # the site is already published; a red run makes GitHub email the owner about a broken restaurant
       - name: Fail when a restaurant could not be read
         run: |

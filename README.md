@@ -21,11 +21,11 @@ python3 -m venv .venv
 python3 -m http.server 8765 --directory site   # open http://localhost:8765
 ```
 
-## Publish on GitHub Pages
-1. Create an empty public repository on github.com.
-2. Push this folder to it (`git init`, `git add .`, `git commit`, `git remote add origin …`, `git push -u origin main`).
-3. In the repository, go to **Settings → Pages → Source** and select **GitHub Actions**.
-4. Under **Actions → Update menus**, click **Run workflow**. The site appears at `https://<user>.github.io/<repo>/`.
+## Publish
+The site is at **https://menicko-litomysl.pages.dev** (Cloudflare Pages, free). The GitHub Actions workflow scrapes, tests and deploys it on schedule and on every push to `main`.
+1. Cloudflare Pages project `menicko-litomysl` (created once: `npx wrangler pages project create menicko-litomysl --production-branch main`).
+2. Repository secrets (**Settings → Secrets and variables → Actions**): `CLOUDFLARE_API_TOKEN` (a token with *Account → Cloudflare Pages → Edit*) and `CLOUDFLARE_ACCOUNT_ID`.
+3. Under **Actions → Update menus**, click **Run workflow**.
 
 ## Adding a restaurant
 1. Save its menu page into `tests/fixtures/<id>.html` and write a test in `tests/test_parsers.py`.
