@@ -25,7 +25,8 @@ def ocr(image, *convert_args):
     with tempfile.TemporaryDirectory() as d:
         src, png = Path(d, "menu"), Path(d, "menu.png")
         src.write_bytes(image)
-        subprocess.run(["convert", src, *convert_args, png], check=True)
+        # "jpg:" forces the JPEG reader, so a hacked site can't feed ImageMagick an SVG/PostScript exploit
+        subprocess.run(["convert", f"jpg:{src}", *convert_args, png], check=True)
         return subprocess.run(["tesseract", png, "-", "-l", "ces", "--psm", "4"],
                               check=True, capture_output=True, text=True).stdout
 

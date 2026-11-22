@@ -19,12 +19,12 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       # GitHub disables scheduled workflows after 60 days without commits; re-enabling keeps it alive
       - run: gh workflow enable update.yml
         env:
           GH_TOKEN: ${{ github.token }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
@@ -35,7 +35,7 @@ jobs:
         run: curl -sf "https://menicko-litomysl.pages.dev/menus.json" -o site/menus.json || true
       - run: python -m scraper.run
       # Cloudflare Pages (https://menicko-litomysl.pages.dev); token and account id are repository secrets
-      - uses: cloudflare/wrangler-action@v3
+      - uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
