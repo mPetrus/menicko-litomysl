@@ -169,3 +169,29 @@ fetch("menus.json", { cache: "no-cache" })
     p.dataset.stamp = "Nenačteno";
     document.getElementById("menus").replaceChildren(p);
   });
+
+// contact form: sent in the background; without JS it still posts straight to Web3Forms
+document.getElementById("contact").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const button = form.querySelector("button");
+  const status = document.getElementById("contact-status");
+  button.disabled = true; // one click, one message
+  status.textContent = "";
+  delete status.dataset.stamp;
+  try {
+    const resp = await fetch(form.action, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+    });
+    if (!resp.ok || !(await resp.json()).success) throw new Error(resp.status);
+    form.reset();
+    status.textContent = "Díky, ozveme se e-mailem.";
+  } catch {
+    status.dataset.stamp = "Neodesláno"; // the site's red failure stamp (style.css .note[data-stamp])
+    status.textContent = "Zprávu se nepodařilo odeslat. Zkuste to prosím později.";
+  } finally {
+    button.disabled = false;
+  }
+});
