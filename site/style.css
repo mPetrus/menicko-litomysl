@@ -209,7 +209,6 @@ footer > p { margin: 0; }
 .contact button:active { transform: translateY(1px); transition: transform 80ms; }
 .contact button:disabled { opacity: .55; cursor: progress; }
 #contact-status { margin: 0; color: var(--ink); font-weight: 600; }
-#contact-status:empty { display: none; }
 .contact-note { margin: 0; font-size: var(--meta); }
 
 /* Day switch = pulling a fresh print. The red day label travels to the new day; the new menus replace
