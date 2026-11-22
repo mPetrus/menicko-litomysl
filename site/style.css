@@ -57,7 +57,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0 auto;
-  max-width: 760px;
+  max-width: 1280px;
   padding: 16px;
   background: var(--bg);
   color: var(--text);
@@ -73,6 +73,7 @@ h1 { margin: 16px 0 0; font-size: 2rem; line-height: 1.1; letter-spacing: -.01em
 header { position: sticky; top: 0; background: var(--bg); padding: 8px 0 12px; z-index: 1; }
 input[type=search] {
   width: 100%;
+  max-width: 560px;
   padding: 10px 12px;
   font: inherit;
   color: inherit;
@@ -106,10 +107,13 @@ nav button[aria-pressed=true] { background: var(--accent); border-color: var(--a
   border: 1px solid var(--line);
   border-radius: 10px;
 }
-/* spacing rhythm: 16 between restaurants, a wider break before the ones without food, those packed at 8 */
-.card + .card { margin-top: 16px; }
-.card:has(ul) + .card:not(:has(ul)) { margin-top: 32px; }
-.card:not(:has(ul)) + .card:not(:has(ul)) { margin-top: 8px; }
+/* restaurants side by side as far as the screen fits (one column on phones);
+   spacing rhythm: 16 between restaurants, a wider break before the ones without food
+   (one row each), those packed at 8 */
+#menus { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 16px; align-items: start; }
+#menus > .card:not(:has(ul)), #menus > p { grid-column: 1 / -1; }
+.card:has(ul) + .card:not(:has(ul)) { margin-top: 16px; }
+.card:not(:has(ul)) + .card:not(:has(ul)) { margin-top: -8px; }
 .card h2 { margin: 0 0 8px; font-size: 1.3125rem; line-height: 1.2; }
 .card h2 a { color: var(--text); text-decoration: none; }
 .card h2 a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
