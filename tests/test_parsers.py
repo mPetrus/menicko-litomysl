@@ -220,3 +220,8 @@ def test_week_monday_across_new_year():
     from scraper.parsers import week_monday
     assert week_monday(29, 12, 1, 2027) == date(2026, 12, 29)
     assert week_monday(23, 11, 11, 2026) == date(2026, 11, 23)
+
+
+def test_snyt_soup_without_price_line_does_not_crash():
+    html = "<p>Pondělí</p><p>23. 11.</p><p>Polévka</p><p>Hráškový krém</p>"
+    assert snyt.parse(html, today=date(2026, 11, 21)) == [{"date": "2026-11-23", "items": []}]

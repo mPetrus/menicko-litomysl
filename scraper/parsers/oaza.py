@@ -1,9 +1,9 @@
 import re
 from datetime import timedelta
 
-from . import item, page_lines, week_monday
+from . import DAYS as CAPITAL_DAYS, item, page_lines, week_monday
 
-DAYS = ["pondělí", "úterý", "středa", "čtvrtek", "pátek"]
+DAYS = [d.lower() for d in CAPITAL_DAYS]
 
 
 def parse(html):

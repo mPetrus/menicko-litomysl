@@ -17,7 +17,7 @@ def parse(html, today=None):
             days.append(current)
         elif current is None:
             continue
-        elif line == "Polévka":
+        elif line == "Polévka" and len(nxt) >= 2:
             # "Hráškový krém nebo Vývar s nudlemi" / "v ceně menu · samostatně 45 Kč"
             price = int(re.search(r"(\d+) Kč", nxt[1])[1])
             current["items"] += [item("soup", s, price) for s in nxt[0].split(" nebo ")]
