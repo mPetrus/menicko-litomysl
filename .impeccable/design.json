@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-22T11:17:13+00:00",
+  "title": "Design System: Meníčko Litomyšl",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Portmoneum Ochre",
+        "canonical": "oklch(74.5% 0.135 77)",
+        "tonalRamp": [
+          "oklch(15% 0.066 77)",
+          "oklch(26% 0.085 77)",
+          "oklch(37% 0.104 77)",
+          "oklch(48% 0.123 77)",
+          "oklch(59% 0.128 77)",
+          "oklch(70% 0.109 77)",
+          "oklch(82% 0.089 77)",
+          "oklch(95% 0.066 77)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Print Paper",
+        "canonical": "oklch(97.6% 0.012 85)",
+        "tonalRamp": [
+          "oklch(15% 0.006 85)",
+          "oklch(26% 0.008 85)",
+          "oklch(37% 0.009 85)",
+          "oklch(48% 0.011 85)",
+          "oklch(59% 0.011 85)",
+          "oklch(70% 0.01 85)",
+          "oklch(82% 0.008 85)",
+          "oklch(95% 0.006 85)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Cut Ink",
+        "canonical": "oklch(19% 0.01 70)",
+        "tonalRamp": [
+          "oklch(15% 0.005 70)",
+          "oklch(26% 0.006 70)",
+          "oklch(37% 0.008 70)",
+          "oklch(48% 0.009 70)",
+          "oklch(59% 0.009 70)",
+          "oklch(70% 0.008 70)",
+          "oklch(82% 0.007 70)",
+          "oklch(95% 0.005 70)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "oklch(43% 0.03 70)",
+        "tonalRamp": [
+          "oklch(15% 0.015 70)",
+          "oklch(26% 0.019 70)",
+          "oklch(37% 0.023 70)",
+          "oklch(48% 0.027 70)",
+          "oklch(59% 0.028 70)",
+          "oklch(70% 0.024 70)",
+          "oklch(82% 0.02 70)",
+          "oklch(95% 0.015 70)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Cut Line",
+        "canonical": "oklch(19% 0.01 70)",
+        "tonalRamp": [
+          "oklch(15% 0.005 70)",
+          "oklch(26% 0.006 70)",
+          "oklch(37% 0.008 70)",
+          "oklch(48% 0.009 70)",
+          "oklch(59% 0.009 70)",
+          "oklch(70% 0.008 70)",
+          "oklch(82% 0.007 70)",
+          "oklch(95% 0.005 70)"
+        ]
+      },
+      "on-line": {
+        "role": "neutral",
+        "displayName": "Reverse",
+        "canonical": "oklch(97.6% 0.012 85)",
+        "tonalRamp": [
+          "oklch(15% 0.006 85)",
+          "oklch(26% 0.008 85)",
+          "oklch(37% 0.009 85)",
+          "oklch(48% 0.011 85)",
+          "oklch(59% 0.011 85)",
+          "oklch(70% 0.01 85)",
+          "oklch(82% 0.008 85)",
+          "oklch(95% 0.006 85)"
+        ]
+      },
+      "red": {
+        "role": "primary",
+        "displayName": "Váchal Red",
+        "canonical": "oklch(51% 0.17 29)",
+        "tonalRamp": [
+          "oklch(15% 0.083 29)",
+          "oklch(26% 0.107 29)",
+          "oklch(37% 0.131 29)",
+          "oklch(48% 0.155 29)",
+          "oklch(59% 0.161 29)",
+          "oklch(70% 0.138 29)",
+          "oklch(82% 0.112 29)",
+          "oklch(95% 0.083 29)"
+        ]
+      },
+      "on-red": {
+        "role": "neutral",
+        "displayName": "On Red",
+        "canonical": "oklch(98% 0.01 85)",
+        "tonalRamp": [
+          "oklch(15% 0.005 85)",
+          "oklch(26% 0.006 85)",
+          "oklch(37% 0.008 85)",
+          "oklch(48% 0.009 85)",
+          "oklch(59% 0.009 85)",
+          "oklch(70% 0.008 85)",
+          "oklch(82% 0.007 85)",
+          "oklch(95% 0.005 85)"
+        ]
+      },
+      "soup": {
+        "role": "secondary",
+        "displayName": "Madder Wash",
+        "canonical": "oklch(86% 0.055 40)",
+        "tonalRamp": [
+          "oklch(15% 0.027 40)",
+          "oklch(26% 0.035 40)",
+          "oklch(37% 0.042 40)",
+          "oklch(48% 0.05 40)",
+          "oklch(59% 0.052 40)",
+          "oklch(70% 0.044 40)",
+          "oklch(82% 0.036 40)",
+          "oklch(95% 0.027 40)"
+        ]
+      },
+      "dessert": {
+        "role": "secondary",
+        "displayName": "Verdigris Wash",
+        "canonical": "oklch(86% 0.045 155)",
+        "tonalRamp": [
+          "oklch(15% 0.022 155)",
+          "oklch(26% 0.028 155)",
+          "oklch(37% 0.035 155)",
+          "oklch(48% 0.041 155)",
+          "oklch(59% 0.043 155)",
+          "oklch(70% 0.036 155)",
+          "oklch(82% 0.03 155)",
+          "oklch(95% 0.022 155)"
+        ]
+      },
+      "ground-dark": {
+        "role": "neutral",
+        "displayName": "Portmoneum Ochre (dark)",
+        "canonical": "oklch(16.5% 0.01 65)",
+        "tonalRamp": [
+          "oklch(15% 0.066 77)",
+          "oklch(26% 0.085 77)",
+          "oklch(37% 0.104 77)",
+          "oklch(48% 0.123 77)",
+          "oklch(59% 0.128 77)",
+          "oklch(70% 0.109 77)",
+          "oklch(82% 0.089 77)",
+          "oklch(95% 0.066 77)"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Print Paper (dark)",
+        "canonical": "oklch(25% 0.045 72)",
+        "tonalRamp": [
+          "oklch(15% 0.006 85)",
+          "oklch(26% 0.008 85)",
+          "oklch(37% 0.009 85)",
+          "oklch(48% 0.011 85)",
+          "oklch(59% 0.011 85)",
+          "oklch(70% 0.01 85)",
+          "oklch(82% 0.008 85)",
+          "oklch(95% 0.006 85)"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Cut Ink (dark)",
+        "canonical": "oklch(94% 0.015 85)",
+        "tonalRamp": [
+          "oklch(15% 0.005 70)",
+          "oklch(26% 0.006 70)",
+          "oklch(37% 0.008 70)",
+          "oklch(48% 0.009 70)",
+          "oklch(59% 0.009 70)",
+          "oklch(70% 0.008 70)",
+          "oklch(82% 0.007 70)",
+          "oklch(95% 0.005 70)"
+        ]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Faded Ink (dark)",
+        "canonical": "oklch(78% 0.06 78)",
+        "tonalRamp": [
+          "oklch(15% 0.015 70)",
+          "oklch(26% 0.019 70)",
+          "oklch(37% 0.023 70)",
+          "oklch(48% 0.027 70)",
+          "oklch(59% 0.028 70)",
+          "oklch(70% 0.024 70)",
+          "oklch(82% 0.02 70)",
+          "oklch(95% 0.015 70)"
+        ]
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Cut Line (dark)",
+        "canonical": "oklch(74% 0.13 77)",
+        "tonalRamp": [
+          "oklch(15% 0.005 70)",
+          "oklch(26% 0.006 70)",
+          "oklch(37% 0.008 70)",
+          "oklch(48% 0.009 70)",
+          "oklch(59% 0.009 70)",
+          "oklch(70% 0.008 70)",
+          "oklch(82% 0.007 70)",
+          "oklch(95% 0.005 70)"
+        ]
+      },
+      "on-line-dark": {
+        "role": "neutral",
+        "displayName": "Reverse (dark)",
+        "canonical": "oklch(17% 0.012 65)",
+        "tonalRamp": [
+          "oklch(15% 0.006 85)",
+          "oklch(26% 0.008 85)",
+          "oklch(37% 0.009 85)",
+          "oklch(48% 0.011 85)",
+          "oklch(59% 0.011 85)",
+          "oklch(70% 0.01 85)",
+          "oklch(82% 0.008 85)",
+          "oklch(95% 0.006 85)"
+        ]
+      },
+      "red-dark": {
+        "role": "primary",
+        "displayName": "Váchal Red (dark)",
+        "canonical": "oklch(63% 0.17 29)",
+        "tonalRamp": [
+          "oklch(15% 0.083 29)",
+          "oklch(26% 0.107 29)",
+          "oklch(37% 0.131 29)",
+          "oklch(48% 0.155 29)",
+          "oklch(59% 0.161 29)",
+          "oklch(70% 0.138 29)",
+          "oklch(82% 0.112 29)",
+          "oklch(95% 0.083 29)"
+        ]
+      },
+      "on-red-dark": {
+        "role": "neutral",
+        "displayName": "On Red (dark)",
+        "canonical": "oklch(15% 0.01 30)",
+        "tonalRamp": [
+          "oklch(15% 0.005 85)",
+          "oklch(26% 0.006 85)",
+          "oklch(37% 0.008 85)",
+          "oklch(48% 0.009 85)",
+          "oklch(59% 0.009 85)",
+          "oklch(70% 0.008 85)",
+          "oklch(82% 0.007 85)",
+          "oklch(95% 0.005 85)"
+        ]
+      },
+      "soup-dark": {
+        "role": "secondary",
+        "displayName": "Madder Wash (dark)",
+        "canonical": "oklch(34% 0.065 38)",
+        "tonalRamp": [
+          "oklch(15% 0.027 40)",
+          "oklch(26% 0.035 40)",
+          "oklch(37% 0.042 40)",
+          "oklch(48% 0.05 40)",
+          "oklch(59% 0.052 40)",
+          "oklch(70% 0.044 40)",
+          "oklch(82% 0.036 40)",
+          "oklch(95% 0.027 40)"
+        ]
+      },
+      "dessert-dark": {
+        "role": "secondary",
+        "displayName": "Verdigris Wash (dark)",
+        "canonical": "oklch(33% 0.045 155)",
+        "tonalRamp": [
+          "oklch(15% 0.022 155)",
+          "oklch(26% 0.028 155)",
+          "oklch(37% 0.035 155)",
+          "oklch(48% 0.041 155)",
+          "oklch(59% 0.043 155)",
+          "oklch(70% 0.036 155)",
+          "oklch(82% 0.03 155)",
+          "oklch(95% 0.022 155)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Cut Title",
+        "purpose": "The title in the black band, once."
+      },
+      "headline": {
+        "displayName": "Restaurant Name",
+        "purpose": "Names cut out of the black name block."
+      },
+      "title": {
+        "displayName": "Closed Heading",
+        "purpose": "Closed-restaurants heading and closed label names."
+      },
+      "dish-label": {
+        "displayName": "Dish Label",
+        "purpose": "Inline label before a dish (A, 1, Pizza I)."
+      },
+      "stamp": {
+        "displayName": "Stamp Word",
+        "purpose": "Uppercase stamp words only."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Dish names, sentences, prices (650, tabular)."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Day pills, buttons, notes."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Update time, allergens, footer."
+      }
+    },
+    "shadows": [
+      {
+        "name": "band-bleed",
+        "value": "0 0 0 100vmax var(--bg-band)",
+        "purpose": "Structural only: extends a band full-bleed (paired with clip-path: inset(0 -100vmax))."
+      },
+      {
+        "name": "selected-ring",
+        "value": "inset 0 0 0 2px var(--paper)",
+        "purpose": "Paper ring between the red selected pill and its black border."
+      },
+      {
+        "name": "favourite-ring",
+        "value": "outline: 3px solid var(--red); outline-offset: 4px",
+        "purpose": "Marks a favourite card; not a shadow."
+      }
+    ],
+    "filters": [
+      {
+        "name": "cut",
+        "value": "feTurbulence fractalNoise baseFrequency 0.045 numOctaves 3 seed 7 + feDisplacementMap scale 5",
+        "purpose": "Roughens frames and black blocks drawn on pseudo-elements; never on text."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-press",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Day-switch pill travel and menus press-in."
+      },
+      {
+        "name": "pill-travel",
+        "value": "260ms",
+        "purpose": "Selected day pill view-transition group."
+      },
+      {
+        "name": "menus-press",
+        "value": "220ms, from translateY(-10px) opacity .6",
+        "purpose": "New menus press onto the page; old menus vanish at once."
+      },
+      {
+        "name": "press-tap",
+        "value": "80ms translateY(1px) / 100ms scale(.85)",
+        "purpose": "Pill and heart press feedback."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "Pill travel and press-in removed."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1000px"
+      },
+      {
+        "name": "column-min",
+        "value": "340px"
+      },
+      {
+        "name": "max-width",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Day Pill",
+      "kind": "chip",
+      "refersTo": "day-pill",
+      "description": "Paper ticket in a cut border; one per day.",
+      "html": "<div class=\"ds-days\"><button class=\"ds-pill\">Po 23. 11.</button><button class=\"ds-pill\" aria-pressed=\"true\">Út 24. 11.</button></div>",
+      "css": ":host{--ground:oklch(74.5% 0.135 77);--paper:oklch(97.6% 0.012 85);--ink:oklch(19% 0.01 70);--muted:oklch(43% 0.03 70);--line:oklch(19% 0.01 70);--on-line:oklch(97.6% 0.012 85);--red:oklch(51% 0.17 29);--on-red:oklch(98% 0.01 85);--soup:oklch(86% 0.055 40);--dessert:oklch(86% 0.045 155);--cut:'Grenze',Georgia,serif} .ds-days{display:flex;gap:8px;padding:12px;background:var(--ground)} .ds-pill{padding:6px 13px;font:600 .9375rem/1.3 system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);background:var(--paper);border:2px solid var(--line);border-radius:2px 4px 3px 2px;cursor:pointer} .ds-pill:hover{background:color-mix(in oklch,var(--paper) 80%,var(--red))} .ds-pill:active{transform:translateY(1px);transition:transform 80ms} .ds-pill:focus-visible{outline:3px solid var(--red);outline-offset:2px} .ds-pill[aria-pressed=true]{background:var(--red);color:var(--on-red);box-shadow:inset 0 0 0 2px var(--paper)}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Paper field set into the black band.",
+      "html": "<div class=\"ds-band\"><input class=\"ds-search\" type=\"search\" placeholder=\"Hledat jídlo\" aria-label=\"Hledat jídlo\"></div>",
+      "css": ":host{--ground:oklch(74.5% 0.135 77);--paper:oklch(97.6% 0.012 85);--ink:oklch(19% 0.01 70);--muted:oklch(43% 0.03 70);--line:oklch(19% 0.01 70);--on-line:oklch(97.6% 0.012 85);--red:oklch(51% 0.17 29);--on-red:oklch(98% 0.01 85);--soup:oklch(86% 0.055 40);--dessert:oklch(86% 0.045 155);--cut:'Grenze',Georgia,serif} .ds-band{background:var(--line);padding:14px 12px} .ds-search{display:block;width:100%;box-sizing:border-box;padding:10px 12px;font:16px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);background:var(--paper);border:0;border-radius:3px;caret-color:var(--red)} .ds-search::placeholder{color:var(--muted)} .ds-search:focus{outline:3px solid var(--red);outline-offset:0}"
+    },
+    {
+      "name": "Masthead Band",
+      "kind": "nav",
+      "refersTo": "band",
+      "description": "Full-bleed black band carrying the cut title and update time.",
+      "html": "<header class=\"ds-mast\"><h1>Meníčko Litomyšl</h1><p>Aktualizováno dnes 8:12</p></header>",
+      "css": ":host{--ground:oklch(74.5% 0.135 77);--paper:oklch(97.6% 0.012 85);--ink:oklch(19% 0.01 70);--muted:oklch(43% 0.03 70);--line:oklch(19% 0.01 70);--on-line:oklch(97.6% 0.012 85);--red:oklch(51% 0.17 29);--on-red:oklch(98% 0.01 85);--soup:oklch(86% 0.055 40);--dessert:oklch(86% 0.045 155);--cut:'Grenze',Georgia,serif} .ds-mast{background:var(--line);color:var(--on-line);padding:14px 12px 12px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap} .ds-mast h1{margin:0;font:800 2.125rem/1.05 var(--cut);letter-spacing:.005em} .ds-mast p{margin:0;font:.8125rem system-ui,-apple-system,'Segoe UI',sans-serif;color:color-mix(in oklch,var(--on-line) 72%,var(--line))}"
+    },
+    {
+      "name": "Menu Card",
+      "kind": "card",
+      "refersTo": "menu-card",
+      "description": "Signature: paper block in a cut frame, name cut out of black, ruled dish rows with washes.",
+      "html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\"><filter id=\"ds-cut\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"3\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"5\"/></filter></svg><div class=\"ds-wall\"><article class=\"ds-card\"><div class=\"ds-head\"><h2>U Kohouta</h2><button class=\"ds-fav\" aria-pressed=\"true\" aria-label=\"Oblíbená\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z\"/></svg></button></div><ul><li class=\"ds-soup\"><span class=\"ds-name\">Hovězí vývar s nudlemi</span><span class=\"ds-price\">45 Kč</span><span class=\"ds-al\">1, 3, 9</span></li><li><span class=\"ds-name\"><b>A</b> Svíčková na smetaně, knedlík</span><span class=\"ds-price\">169 Kč</span><span class=\"ds-al\">1, 3, 7</span></li><li class=\"ds-dessert\"><span class=\"ds-name\">Jablečný závin</span><span class=\"ds-price\">59 Kč</span></li></ul></article></div>",
+      "css": ":host{--ground:oklch(74.5% 0.135 77);--paper:oklch(97.6% 0.012 85);--ink:oklch(19% 0.01 70);--muted:oklch(43% 0.03 70);--line:oklch(19% 0.01 70);--on-line:oklch(97.6% 0.012 85);--red:oklch(51% 0.17 29);--on-red:oklch(98% 0.01 85);--soup:oklch(86% 0.055 40);--dessert:oklch(86% 0.045 155);--cut:'Grenze',Georgia,serif} .ds-wall{background:var(--ground);padding:16px;font:16px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink)} .ds-card{position:relative;isolation:isolate;background:var(--paper);padding:4px;outline:3px solid var(--red);outline-offset:4px} .ds-card::before{content:'';position:absolute;inset:0;border:4px solid var(--line);border-radius:3px 6px 4px 5px;filter:url(#ds-cut);pointer-events:none;z-index:2} .ds-head{position:relative;display:flex;align-items:center;gap:6px;padding:8px 8px 7px 12px;color:var(--on-line)} .ds-head::before{content:'';position:absolute;inset:-4px -4px 0;z-index:-1;background:var(--line);filter:url(#ds-cut)} .ds-head h2{margin:0;flex:1;font:700 1.5rem/1.1 var(--cut);letter-spacing:.01em} .ds-fav{display:grid;place-items:center;width:36px;height:36px;padding:0;border:0;background:none;color:inherit;cursor:pointer} .ds-fav svg{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linejoin:round} .ds-fav:hover{color:color-mix(in oklch,var(--on-line) 55%,var(--red))} .ds-fav[aria-pressed=true]{color:var(--red)} .ds-fav[aria-pressed=true] svg{fill:currentColor;stroke:var(--on-line);stroke-width:1.5} .ds-card ul{list-style:none;margin:0;padding:2px 12px 6px} .ds-card li{display:flex;flex-wrap:wrap;gap:2px 12px;padding:8px 0;border-top:2px solid var(--line)} .ds-card li:first-child{border-top:0} .ds-name{flex:1 1 220px} .ds-name b{font:700 1.125rem/1 var(--cut);margin-right:2px} .ds-soup,.ds-dessert{margin-inline:-12px;padding-inline:12px!important} .ds-soup{background:var(--soup)} .ds-dessert{background:var(--dessert)} .ds-price{margin-left:auto;font-weight:650;white-space:nowrap;font-variant-numeric:tabular-nums} .ds-al{flex-basis:100%;font-size:.8125rem;color:color-mix(in oklch,var(--ink) 70%,transparent)}"
+    },
+    {
+      "name": "Stamp Note",
+      "kind": "custom",
+      "description": "State as a red rotated stamp above a plain-ink sentence.",
+      "html": "<div class=\"ds-paper\"><p class=\"ds-note\" data-stamp=\"Nenačteno\">Menu se dnes nepodařilo načíst. <a href=\"#\">Web restaurace</a></p></div>",
+      "css": ":host{--ground:oklch(74.5% 0.135 77);--paper:oklch(97.6% 0.012 85);--ink:oklch(19% 0.01 70);--muted:oklch(43% 0.03 70);--line:oklch(19% 0.01 70);--on-line:oklch(97.6% 0.012 85);--red:oklch(51% 0.17 29);--on-red:oklch(98% 0.01 85);--soup:oklch(86% 0.055 40);--dessert:oklch(86% 0.045 155);--cut:'Grenze',Georgia,serif} .ds-paper{background:var(--paper);padding:12px} .ds-note{margin:0;font:.9375rem/1.45 system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink)} .ds-note::before{content:attr(data-stamp);display:block;width:fit-content;margin:2px 0 6px;padding:1px 8px 0;border:3px solid var(--red);border-radius:3px;color:var(--red);font:800 1rem/1.3 var(--cut);letter-spacing:.09em;text-transform:uppercase;transform:rotate(-3deg)} .ds-note a{color:inherit;font-weight:650;text-underline-offset:3px} .ds-note a:focus-visible{outline:3px solid var(--red);outline-offset:2px}"
+    },
+    {
+      "name": "Closed Label",
+      "kind": "card",
+      "refersTo": "menu-card",
+      "description": "A restaurant with no food that day: small framed label straight on the wall.",
+      "html": "<div class=\"ds-wall2\"><div class=\"ds-closed\"><h2>Pizzerie Na Rynku</h2><p>Dnes zavřeno</p></div></div>",
+      "css": ":host{--ground:oklch(74.5% 0.135 77);--paper:oklch(97.6% 0.012 85);--ink:oklch(19% 0.01 70);--muted:oklch(43% 0.03 70);--line:oklch(19% 0.01 70);--on-line:oklch(97.6% 0.012 85);--red:oklch(51% 0.17 29);--on-red:oklch(98% 0.01 85);--soup:oklch(86% 0.055 40);--dessert:oklch(86% 0.045 155);--cut:'Grenze',Georgia,serif} .ds-wall2{background:var(--ground);padding:16px;font:16px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink)} .ds-closed{position:relative;display:flex;flex-wrap:wrap;align-items:center;column-gap:10px;padding:9px 12px;border:2px solid var(--line);border-radius:3px 6px 4px 5px} .ds-closed h2{margin:0;font:700 1.1875rem/1.2 var(--cut)} .ds-closed p{margin:0;font-size:.9375rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Portmoneum Woodcut",
+    "overview": "The page is a print after Josef Váchal, whose Portmoneum house stands in Litomyšl: a heavy black cut line, with colour washed by hand only inside it. An ochre wall is the ground; each restaurant's menu is a paper block in an uneven black frame, its name cut white out of a black block. Everything that has to be read at length (dishes, prices, allergens, controls) stays in the plain system face, so the woodcut is carried by line, frame and the cut letter, never by making the menu harder to scan.\n\nDensity is high and deliberate: menus pack into as many columns as fit, top-down, so a short menu never leaves a hole next to a long one. Colour is rationed: one solid red for state (selected day, favourite ring, stamps), two pale washes for dish types, and the rest is ink, paper and wall. Dark mode inverts the print: the ground becomes ink, the cut becomes ochre, the paper turns dark ochre-brown, and the washes stay.\n\nMotion has one grammar: switching day is pulling a fresh print. The red day label travels to the new day and the new menus press down onto the page; nothing else fades.",
+    "keyCharacteristics": [
+      "Ochre wall ground, paper blocks, heavy black cut frames roughened by one SVG displacement filter.",
+      "Restaurant names cut out of a black block in Grenze; all reading text in the system face.",
+      "Colour only inside the line: soup and dessert washes, red for state only.",
+      "States are stamps: a red, rotated, uppercase Grenze word pressed onto the paper.",
+      "Full-bleed black band for the title and search; day row on the wall below it."
+    ],
+    "rules": [
+      {
+        "name": "The Inside-The-Line Rule",
+        "body": "Colour lives only inside a cut frame or a cut row: washes fill rows between black rules, red fills the pill inside its black border. No coloured element floats free on the wall.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Red Rule",
+        "body": "Red means state (chosen, favourite, failed). If it is not one of those, it is not red.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cut Letter Rule",
+        "body": "Grenze is for names and labels that are carved, never for sentences, dishes or prices.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Print Rule",
+        "body": "Nothing casts a shadow. Separation comes from cut lines, paper against wall, and red rings.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Roughen-The-Edge-Only Rule",
+        "body": "The #cut filter (fractal-noise turbulence, base frequency 0.045, 3 octaves, displacement scale 5) is applied only to pseudo-elements that draw a frame or a black block. Text is never filtered.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep every colour inside a black line: washes in ruled rows, red inside a bordered pill or stamp.",
+      "Do cut new headings and names out of a line-colour block in Grenze, and keep reading text in the system face.",
+      "Do draw new frames and black blocks on pseudo-elements through the #cut filter, so the text stays sharp.",
+      "Do show failure or staleness as a red rotated stamp with a plain sentence and a link, never by hiding the restaurant.",
+      "Do define every new colour as an OKLCH token with a dark-mode value."
+    ],
+    "donts": [
+      "Don't add drop shadows, gradients or soft white cards on a pale page; the depth is the print.",
+      "Don't use red for anything but state (selected, favourite, failed).",
+      "Don't apply the #cut filter to an element that contains text.",
+      "Don't set dishes, prices or sentences in Grenze.",
+      "Don't add fades or entrance animations beyond the day-switch press."
+    ]
+  }
+}

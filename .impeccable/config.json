@@ -191,6 +191,20 @@
         ],
         "createdAt": "2026-11-22T09:49:40.438Z",
         "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "tests/fixtures/danicola.html",
+          "tests/fixtures/karlov.html",
+          "tests/fixtures/oaza.html",
+          "tests/fixtures/plums.html",
+          "tests/fixtures/ukolji.html",
+          "tests/fixtures/underground.html"
+        ],
+        "createdAt": "2026-11-22T11:17:57.053Z",
+        "reason": "Claude: saved copies of third-party restaurant pages used as parser test fixtures, not this project's design"
       }
     ]
   }

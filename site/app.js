@@ -40,12 +40,10 @@ function favButton(r) {
 const hasMatch = (date, query) => data.restaurants.some((r) =>
   r.days.some((d) => d.date === date && d.items.some((i) => norm(i.name).includes(query))));
 
-// switching day moves along the week: menus enter from the side of time (see style.css)
+// switching day pulls a fresh print: the red day label travels, the new menus press in (see style.css)
 function goToDay(date) {
-  const dir = date > selectedDate ? "later" : "earlier";
   selectedDate = date;
   if (!document.startViewTransition) return Promise.resolve(render());
-  document.documentElement.dataset.dayDir = dir;
   return document.startViewTransition(render).updateCallbackDone;
 }
 
@@ -103,8 +101,9 @@ function renderCard(r, query) {
   card.append(head);
   if (favorites.has(r.id)) card.dataset.fav = "";
 
-  const note = (text) => {
+  const note = (text, stamp) => {
     const p = el("p", "note", text + " ");
+    p.dataset.stamp = stamp;
     const link = el("a", null, "Podívejte se na web restaurace");
     link.href = r.menu_url;
     link.target = "_blank";
@@ -115,19 +114,15 @@ function renderCard(r, query) {
 
   if (r.status !== "ok") {
     if (query) return null;
-    card.append(note("Menu se nepodařilo načíst."));
+    card.append(note("Menu se nepodařilo načíst.", "Nenačteno"));
     return card;
   }
-  if (r.stale) card.append(note("Menu se teď nepodařilo aktualizovat, zobrazujeme poslední načtené."));
+  if (r.stale) card.append(note("Menu se teď nepodařilo aktualizovat, zobrazujeme poslední načtené.", "Neaktualizováno"));
 
   const day = r.days.find((d) => d.date === selectedDate);
   const items = (day?.items ?? [])
     .filter((i) => !query || norm(i.name).includes(query));
-  if (!items.length) {
-    if (query) return null;
-    card.append(el("p", "note", selectedDate ? "Na tento den menu není." : "Menu na tento týden zatím nejsou."));
-    return card;
-  }
+  if (!items.length) return query ? null : card; // said once for the whole closed block in render()
   const ul = el("ul");
   ul.append(...items.map(renderItem));
   card.append(ul);
@@ -149,7 +144,9 @@ function render() {
     .sort((a, b) => rank(b) - rank(a));
   // restaurants without food today are grouped below the menus as a compact block
   const closed = el("div", "closed");
-  closed.append(...cards.filter((c) => !c.querySelector("ul")));
+  const shut = cards.filter((c) => !c.querySelector("ul"));
+  if (shut.length) closed.append(el("p", "closed-title",
+    selectedDate ? "Na tento den menu nemají" : "Menu na tento týden zatím nejsou"), ...shut);
   document.getElementById("menus").replaceChildren(
     ...cards.filter((c) => c.querySelector("ul")), ...(closed.children.length ? [closed] : []));
   const empty = document.getElementById("empty");
@@ -169,5 +166,6 @@ fetch("menus.json", { cache: "no-cache" })
   })
   .catch(() => {
     const p = el("p", "note warn", "Menu se nepodařilo načíst. Zkuste stránku obnovit.");
+    p.dataset.stamp = "Nenačteno";
     document.getElementById("menus").replaceChildren(p);
   });

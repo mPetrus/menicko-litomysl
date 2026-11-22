@@ -17,7 +17,10 @@ def parse(html, today=None):
         if not price:  # announcements like "30 druhů pizz…" are listed at 0 Kč
             continue
         tag = row.select_one(".tag-alergen")
-        dish = item("main", row.select_one(".menu-row-name").get_text(" ", strip=True), price)
+        # shortcut: the page has no soup marker; soups come first and cost under 100 Kč,
+        # so the leading cheap rows are soups. Revisit if a cheap starter ever opens the list.
+        soup_row = price < 100 and all(i["type"] == "soup" for i in items)
+        dish = item("soup" if soup_row else "main", row.select_one(".menu-row-name").get_text(" ", strip=True), price)
         dish["allergens"] = tag["title"].split(", ") if tag else None
         items.append(dish)
     return [{"date": today.isoformat(), "items": items}] if items else []
