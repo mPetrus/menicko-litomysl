@@ -84,7 +84,8 @@ function render() {
   if (!dates.includes(selectedDate)) selectedDate = dates[0];
   const query = norm(document.getElementById("search").value.trim());
   renderDays(dates, query);
-  const cards = data.restaurants.map((r) => renderCard(r, query)).filter(Boolean);
+  const cards = data.restaurants.map((r) => renderCard(r, query)).filter(Boolean)
+    .sort((a, b) => !!b.querySelector("ul") - !!a.querySelector("ul")); // restaurants with food first
   document.getElementById("menus").replaceChildren(...cards);
   document.getElementById("empty").hidden = cards.length > 0;
 }
