@@ -1,9 +1,24 @@
 import re
+import subprocess
+import tempfile
 from datetime import date
+from pathlib import Path
 
 from bs4 import BeautifulSoup
 
 DAYS = ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek"]
+MONTHS = ["ledna", "února", "března", "dubna", "května", "června", "července",
+          "srpna", "září", "října", "listopadu", "prosince"]
+
+
+def ocr(image, *convert_args):
+    """Image bytes → text. Needs ImageMagick and Tesseract with Czech, which the GitHub workflow installs."""
+    with tempfile.TemporaryDirectory() as d:
+        src, png = Path(d, "menu"), Path(d, "menu.png")
+        src.write_bytes(image)
+        subprocess.run(["convert", src, *convert_args, png], check=True)
+        return subprocess.run(["tesseract", png, "-", "-l", "ces", "--psm", "4"],
+                              check=True, capture_output=True, text=True).stdout
 
 
 def page_lines(html):

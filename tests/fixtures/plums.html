@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Plums – Restaurace &amp; Penzion | Litomyšl</title>
+  <meta name="description" content="Plums je nová restaurace a penzion v Litomyšli. Česká kuchyně v moderním pojetí — obědy i večeře. Rezervace telefonicky." />
+  <meta name="keywords" content="restaurace Litomyšl, penzion Litomyšl, česká kuchyně Litomyšl, oběd Litomyšl, večeře Litomyšl, Plums" />
+
+  <meta property="og:title" content="Plums – Restaurace &amp; Penzion | Litomyšl" />
+  <meta property="og:description" content="Česká kuchyně v moderním pojetí. Nová restaurace a penzion v Litomyšli." />
+  <meta property="og:image" content="assets/images/jidlo-2.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="cs_CZ" />
+
+  <meta name="google-site-verification" content="FCQV4uhwZgjoTrnFb9OQf5SCA6i8SAYtmwPZhfTfBtw" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="assets/images/logo.jpg" alt="Plums Restaurant &amp; Penzion" />
+      </a>
+      <div class="nav__links">
+        <a href="#o-podniku">O nás</a>
+        <a href="#menu">Menu</a>
+        <a href="#kontakt">Kde nás najdete</a>
+        <a href="poukazy.html">Dárkové poukazy</a>
+        <a href="https://bludicka.cz" target="_blank" rel="noopener noreferrer">Penzion</a>
+        <a href="#rezervace" class="nav__cta">Rezervovat</a>
+      </div>
+      <!-- Hamburger (mobile only) -->
+      <button class="nav__hamburger" id="navHamburger" aria-label="Otevřít menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="nav__mobile" id="navMobile" aria-hidden="true">
+    <button class="nav__mobile-close" id="navMobileClose" aria-label="Zavřít menu">&times;</button>
+    <nav class="nav__mobile-links">
+      <a href="#o-podniku">O nás</a>
+      <a href="#menu">Menu</a>
+      <a href="#kontakt">Kde nás najdete</a>
+      <a href="poukazy.html">Dárkové poukazy</a>
+      <a href="https://bludicka.cz" target="_blank" rel="noopener noreferrer">Penzion</a>
+      <a href="#rezervace" class="nav__mobile-cta">Rezervovat stůl</a>
+    </nav>
+  </div>
+
+  <!-- ===================== HERO (video background) ===================== -->
+  <section class="hero" id="hero">
+
+    <!-- Background video -->
+    <div class="hero__bg">
+      <video autoplay muted loop playsinline webkit-playsinline poster="assets/images/jidlo-2.jpg" id="heroVideo">
+        <source src="assets/video/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__overlay"></div>
+    </div>
+
+    <!-- Leaf decorations -->
+    <div class="hero__leaf hero__leaf--tr" aria-hidden="true">
+      <svg viewBox="0 0 140 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 315 C68 288 66 256 64 224 C62 192 60 162 58 134 C56 106 57 80 62 56 C67 32 72 12 76 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M64 224 C50 213 36 198 32 182 C46 187 59 200 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M64 224 C78 211 92 196 94 180 C80 186 67 199 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C46 162 33 145 30 128 C44 134 58 149 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C75 160 90 144 90 127 C76 134 63 148 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C44 113 32 95 30 78 C44 84 57 100 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C73 111 87 94 86 76 C72 83 60 98 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 80 C50 64 46 46 50 30 C60 40 63 57 61 80Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M64 68 C78 52 84 34 78 18 C68 28 64 46 64 68Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+      </svg>
+    </div>
+    <div class="hero__leaf hero__leaf--bl" aria-hidden="true">
+      <svg viewBox="0 0 140 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 315 C68 288 66 256 64 224 C62 192 60 162 58 134 C56 106 57 80 62 56 C67 32 72 12 76 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M64 224 C50 213 36 198 32 182 C46 187 59 200 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M64 224 C78 211 92 196 94 180 C80 186 67 199 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C46 162 33 145 30 128 C44 134 58 149 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C75 160 90 144 90 127 C76 134 63 148 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C44 113 32 95 30 78 C44 84 57 100 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C73 111 87 94 86 76 C72 83 60 98 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+      </svg>
+    </div>
+
+    <!-- Content over video -->
+    <div class="hero__inner">
+      <div class="hero__brand-mark">
+        <img src="assets/images/logo.jpg" alt="Plums" />
+      </div>
+      <span class="hero__label">Restaurace &amp; Penzion · Litomyšl</span>
+      <h1 class="hero__headline">Česká kuchyně<br /><em>po svém.</em></h1>
+      <p class="hero__sub">
+        Houby z lesa. Králík pomalu pečený.<br />
+        Knedlík je pořád knedlík — jen jinak.
+      </p>
+      <div class="hero__actions">
+        <a href="#rezervace" class="btn btn--light">Rezervovat stůl</a>
+        <a href="#kontakt" class="btn btn--outline-light">Kde nás najdete</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== O NÁS ===================== -->
+  <section class="about section" id="o-podniku">
+    <!-- Leaf side decoration -->
+    <div class="section-leaf section-leaf--right" aria-hidden="true">
+      <svg viewBox="0 0 140 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 315 C68 288 66 256 64 224 C62 192 60 162 58 134 C56 106 57 80 62 56 C67 32 72 12 76 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M64 224 C50 213 36 198 32 182 C46 187 59 200 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M64 224 C78 211 92 196 94 180 C80 186 67 199 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C46 162 33 145 30 128 C44 134 58 149 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C75 160 90 144 90 127 C76 134 63 148 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C44 113 32 95 30 78 C44 84 57 100 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C73 111 87 94 86 76 C72 83 60 98 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 80 C50 64 46 46 50 30 C60 40 63 57 61 80Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="about__inner fade-up">
+          <div class="section-label center">O nás</div>
+          <h2 class="about__headline">Vyrůstal jsem<br /><em>na chalupě.</em></h2>
+          <p class="about__intro">
+            <em>„Naše restaurace nevznikla jako koncept, ale jako přirozené pokračování jednoho života."</em>
+          </p>
+          <p class="about__text">
+            Vařila babička — ne podle receptů, ale podle sezóny, chuti a zkušenosti.
+            Jedlo se to, co dům a příroda daly. Dnes tato jídla vracím na stůl
+            s respektem k tradici, ale s moderním rukopisem.
+          </p>
+          <p class="about__text about__text--closing">
+            Naše restaurace je pozvánkou k návratu.<br />
+            Ne zpátky v čase, ale zpátky k podstatě jídla.
+          </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PŘÍBĚH ===================== -->
+  <section class="founders section section--beige" id="zakladatele">
+    <div class="container">
+      <div class="founders__inner">
+        <div class="founders__text fade-up">
+          <div class="section-label">Příběh</div>
+          <h2>Pavel Švestka<br /><em>a Plums</em></h2>
+          <p>
+            Pracoval a vařil v zahraničí. Poznal moderní techniky, nové suroviny,
+            jiný pohled na gastronomii. Tyto zkušenosti ale nepřebily jeho původ — naopak ho zvýraznily.
+          </p>
+          <p>
+            Plums je místem, kde se tahle cesta uzavřela. Pavel Švestka a jeho přítelkyně
+            dali vzniknout restauraci, která ví, odkud pochází — a kam míří.
+          </p>
+        </div>
+        <div class="founders__visual fade-up">
+          <img src="assets/images/interior-1.jpg" alt="Pavel Švestka — šéfkuchař Plums" loading="lazy" class="founders__chef-photo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MENU ===================== -->
+  <section class="menu-section section" id="menu">
+    <div class="container">
+      <div class="section-label center fade-up">Jídelní lístek</div>
+      <h2 class="center fade-up" id="weeklyMenuHeading">Týdenní menu 16. – 22. listopadu</h2>
+      <div class="menu-featured fade-up">
+        <img src="assets/images/menu-tydenni.jpeg" alt="Týdenní menu Plums" loading="lazy" />
+      </div>
+      <div class="menu-thumbs fade-up">
+        <button class="menu-thumb" data-src="assets/images/menu-stale.jpeg" data-alt="Večerní menu Plums" aria-label="Zobrazit večerní menu">
+          <img src="assets/images/menu-stale.jpeg" alt="Večerní menu" loading="lazy" />
+          <div class="menu-thumb__overlay">
+            <span class="menu-thumb__label">Večerní menu</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </button>
+        <button class="menu-thumb" data-src="assets/images/menu-napoje.jpeg" data-alt="Nápojový lístek Plums" aria-label="Zobrazit nápojový lístek">
+          <img src="assets/images/menu-napoje.jpeg" alt="Nápojový lístek" loading="lazy" />
+          <div class="menu-thumb__overlay">
+            <span class="menu-thumb__label">Nápojový lístek</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </button>
+        <button class="menu-thumb" data-src="assets/images/menu-burgery.jpeg" data-alt="Burgery & Hot Dogy Plums" aria-label="Zobrazit burgery a hot dogy">
+          <img src="assets/images/menu-burgery.jpeg" alt="Burgery & Hot Dogy" loading="lazy" />
+          <div class="menu-thumb__overlay">
+            <span class="menu-thumb__label">Burgery & Hot Dogy</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox__close" aria-label="Zavřít">&times;</button>
+    <img class="lightbox__img" src="" alt="" />
+  </div>
+
+  <!-- ===================== FOTOGALERIE ===================== -->
+  <section class="gallery-section section" id="jidlo">
+    <div class="container">
+      <div class="section-label center fade-up">Z naší kuchyně</div>
+      <h2 class="center fade-up">Každý talíř<br /><em>vypráví příběh</em></h2>
+      <div class="gallery-cta fade-up">
+        <a href="#rezervace" class="btn btn--primary">Rezervovat stůl</a>
+        <a href="#menu" class="btn btn--outline">Zobrazit menu</a>
+      </div>
+    </div>
+    <div class="photo-strip fade-up">
+      <div class="photo-strip__item"><img src="assets/images/food-sauce.jpg" alt="Šéfkuchař při práci" loading="lazy" /></div>
+      <div class="photo-strip__item"><img src="assets/images/food-tatar.jpg" alt="Tatarák" loading="lazy" /></div>
+      <div class="photo-strip__item"><img src="assets/images/food-hrebenatka.jpg" alt="Hřebenatka" loading="lazy" /></div>
+      <div class="photo-strip__item"><img src="assets/images/food-polévka.jpg" alt="Bylinková polévka" loading="lazy" /></div>
+      <div class="photo-strip__item"><img src="assets/images/food-kachna.jpg" alt="Kachní prso" loading="lazy" /></div>
+      <div class="photo-strip__item"><img src="assets/images/food-foiegras.jpg" alt="Foie gras" loading="lazy" /></div>
+      <div class="photo-strip__item"><img src="assets/images/food-misky.jpg" alt="Předkrmy" loading="lazy" /></div>
+      <div class="photo-strip__item"><img src="assets/images/food-kremova.jpg" alt="Krémová polévka" loading="lazy" /></div>
+      <div class="photo-strip__item"><img src="assets/images/food-repa.jpg" alt="Řepné carpaccio" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <!-- ===================== PHILOSOPHY QUOTE ===================== -->
+  <section class="philosophy">
+    <!-- Leaf decoration -->
+    <div class="philosophy__leaf philosophy__leaf--right" aria-hidden="true">
+      <svg viewBox="0 0 140 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 315 C68 288 66 256 64 224 C62 192 60 162 58 134 C56 106 57 80 62 56 C67 32 72 12 76 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M64 224 C50 213 36 198 32 182 C46 187 59 200 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M64 224 C78 211 92 196 94 180 C80 186 67 199 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C46 162 33 145 30 128 C44 134 58 149 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C75 160 90 144 90 127 C76 134 63 148 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C44 113 32 95 30 78 C44 84 57 100 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C73 111 87 94 86 76 C72 83 60 98 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 80 C50 64 46 46 50 30 C60 40 63 57 61 80Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="philosophy__inner">
+        <div class="section-label center light fade-up">Přijďte za námi</div>
+        <h2 class="center light fade-up">Otevřeno<br /><em>od února 2026</em></h2>
+
+        <div class="philosophy__hours fade-up">
+          <div class="philosophy__hour">
+            <span class="philosophy__hour-label">Oběd</span>
+            <span class="philosophy__hour-time">11:00 – 15:00</span>
+          </div>
+          <div class="philosophy__hour">
+            <span class="philosophy__hour-label">Večeře</span>
+            <span class="philosophy__hour-time">17:00 – 21:00</span>
+          </div>
+        </div>
+
+        <p class="philosophy__closed fade-up">Pondělí zavřeno &nbsp;·&nbsp; Rezervaci doporučujeme předem</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CO NABÍZÍME ===================== -->
+  <section class="offers section" id="nabidka">
+    <div class="container">
+      <div class="section-label center fade-up">Co u nás najdete</div>
+      <h2 class="center fade-up">Pod jednou<br /><em>střechou</em></h2>
+      <div class="offers__grid">
+        <div class="offer-card fade-up">
+          <div class="offer-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" aria-hidden="true">
+              <path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
+              <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+            </svg>
+          </div>
+          <h3>Restaurace</h3>
+          <p>Obědy i večeře. 26 míst v sále, salónek pro 20 hostů a terasa ve vnitrobloku pro 50 — v létě s grilem a udírnou.</p>
+        </div>
+        <div class="offer-card fade-up">
+          <div class="offer-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3>Penzion</h3>
+          <p>Ubytování přímo v restauraci. Ideální výchozí bod pro poznávání Litomyšle.</p>
+        </div>
+        <div class="offer-card fade-up">
+          <div class="offer-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" aria-hidden="true">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+            </svg>
+          </div>
+          <h3>Česká kuchyně</h3>
+          <p>Suroviny ze sezóny, lokální dodavatelé, moderní rukopis. Bez kompromisů v chuti.</p>
+        </div>
+        <div class="offer-card fade-up">
+          <div class="offer-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3>Litomyšl</h3>
+          <p>Jedno z nejkrásnějších měst v Čechách — a teď s novým místem, kam se rádi vracíte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INSTAGRAM ===================== -->
+  <!--
+    Pro skutečný Instagram feed doporučujeme:
+    1. Behold.so (free tier) — https://behold.so
+       Zaregistrujte se, připojte @plums_restaurant, získejte Feed ID
+       a nahraďte FEED_ID níže:
+
+    <div id="behold-widget-FEED_ID"></div>
+    <script src="https://w.behold.so/widget.js" type="module"></script>
+
+    2. Nebo Elfsight / LightWidget (placené, bez kódu)
+  -->
+  <section class="instagram section section--chocolate" id="instagram">
+    <!-- Leaf decoration -->
+    <div class="instagram__leaf" aria-hidden="true">
+      <svg viewBox="0 0 140 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 315 C68 288 66 256 64 224 C62 192 60 162 58 134 C56 106 57 80 62 56 C67 32 72 12 76 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M64 224 C50 213 36 198 32 182 C46 187 59 200 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M64 224 C78 211 92 196 94 180 C80 186 67 199 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C46 162 33 145 30 128 C44 134 58 149 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C75 160 90 144 90 127 C76 134 63 148 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C44 113 32 95 30 78 C44 84 57 100 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C73 111 87 94 86 76 C72 83 60 98 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="section-label center light fade-up">Sledujte nás</div>
+      <h2 class="center light fade-up">@plums_restaurant</h2>
+      <p class="instagram__sub center fade-up">
+        Z kuchyně, od stolu, ze zákulisí. Každý den něco nového.
+      </p>
+
+      <div class="instagram__grid fade-up">
+        <a href="https://www.instagram.com/plums_restaurant/" class="instagram__item" target="_blank" rel="noopener noreferrer">
+          <img src="assets/images/food-repa.jpg" alt="Plums na Instagramu" loading="lazy" />
+          <div class="instagram__overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/plums_restaurant/" class="instagram__item" target="_blank" rel="noopener noreferrer">
+          <img src="assets/images/food-misky.jpg" alt="Plums na Instagramu" loading="lazy" />
+          <div class="instagram__overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/plums_restaurant/" class="instagram__item" target="_blank" rel="noopener noreferrer">
+          <img src="assets/images/food-kachna.jpg" alt="Plums na Instagramu" loading="lazy" />
+          <div class="instagram__overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      <div class="instagram__cta fade-up">
+        <a href="https://www.instagram.com/plums_restaurant/" class="btn btn--outline-light" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="17" height="17" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          Sledovat na Instagramu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RECENZE ===================== -->
+  <!--
+    AUTOMATICKÉ RECENZE Z GOOGLE:
+    ─────────────────────────────────────────────────────────────
+    A) Google Places API (doporučeno pro vývojáře)
+       1. Vytvořte projekt v Google Cloud Console, povolte "Places API (New)"
+       2. Zjistěte Place ID: https://developers.google.com/maps/faq#find-place-id
+       3. Zavolejte: https://places.googleapis.com/v1/places/PLACE_ID?fields=rating,userRatingsTotal,reviews&key=API_KEY
+       4. API klíč nesmí být v klientském kódu — nasaďte Vercel Edge Function jako proxy
+          (soubor /api/reviews.js → fetch z backendu, výsledek servírujte do JS)
+       5. Recenze cachujte (Google omezuje volání zdarma, limit ~1 000/měs)
+
+    B) Widget bez backendu (rychlejší start, bez kódu)
+       - SociableKIT: https://sociablekit.com (free tier)
+       - Elfsight: https://elfsight.com (~5 USD/měs, snadná instalace)
+       - EmbedSocial: https://embedsocial.com (free tier)
+
+    Níže jsou zatím statické recenze — nahraďte je reálným textem.
+    Doplňte také: [DOPLNIT GOOGLE MAPS URL] = odkaz na Plums v Google Mapách.
+    ─────────────────────────────────────────────────────────────
+  -->
+  <section class="reviews section section--beige" id="recenze">
+    <!-- Leaf decoration -->
+    <div class="reviews__leaf reviews__leaf--left" aria-hidden="true">
+      <svg viewBox="0 0 140 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 315 C68 288 66 256 64 224 C62 192 60 162 58 134 C56 106 57 80 62 56 C67 32 72 12 76 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M64 224 C50 213 36 198 32 182 C46 187 59 200 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M64 224 C78 211 92 196 94 180 C80 186 67 199 64 224Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C46 162 33 145 30 128 C44 134 58 149 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 174 C75 160 90 144 90 127 C76 134 63 148 61 174Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C44 113 32 95 30 78 C44 84 57 100 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M59 126 C73 111 87 94 86 76 C72 83 60 98 59 126Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+        <path d="M61 80 C50 64 46 46 50 30 C60 40 63 57 61 80Z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-label center fade-up">Recenze</div>
+      <h2 class="center fade-up">Co říkají hosté</h2>
+
+      <div class="reviews__badge fade-up">
+        <div class="reviews__google">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          <div class="reviews__stars-big">★★★★<span style="display:inline-block;width:.5em;overflow:hidden">★</span></div>
+          <a href="https://www.google.com/travel/search?gsas=1&ts=EggKAggDCgIIAxocEhoSFAoHCOoPEAQYDRIHCOoPEAQYDhgBMgIQAA&qs=MhNDZ29JazYtcy1JWDcydGRURUFFOAI&ap=ugEHcmV2aWV3cw&ictx=111&client=safari&hs=bBhp&biw=1436&bih=694&hl=cs-CZ&ved=0CAAQ5JsGahcKEwi4vu6G1-iTAxUAAAAAHQAAAAAQBA" class="reviews__count" target="_blank" rel="noopener noreferrer">Google recenze</a>
+        </div>
+      </div>
+
+      <div class="reviews__grid">
+
+        <div class="review-card fade-up">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            Plums je malá restaurace s velkým srdcem. Host odchází nejen s gastro zážitkem, ale i s pocitem, že pro šéfkuchaře Pavla bylo potěšení vařit právě pro vás.
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">I</div>
+            <div>
+              <span class="review-card__name">Iveta E.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card fade-up">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            Malá, krásná, čistá restaurace s velmi milým personálem a výborným jídlem. Porce jsou tak akorát. Odcházeli jsme spokojení, s plným žaludkem a krásným gastro zážitkem. Je vidět, že každému talíři věnují 100 %.
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">L</div>
+            <div>
+              <span class="review-card__name">Lucie B.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card fade-up">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            Byli jsme zde s přítelkyní na večeři a byli jsme okouzleni obsluhou, kvalitou a chutností jídla. Dokonce sám pan majitel se přišel ujistit, zda je vše v pořádku. Určitě se sem ještě vrátíme.
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">J</div>
+            <div>
+              <span class="review-card__name">Janek J.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="reviews__cta center fade-up">
+        <a href="https://www.google.com/travel/search?gsas=1&ts=EggKAggDCgIIAxocEhoSFAoHCOoPEAQYDRIHCOoPEAQYDhgBMgIQAA&qs=MhNDZ29JazYtcy1JWDcydGRURUFFOAI&ap=ugEHcmV2aWV3cw&ictx=111&client=safari&hs=bBhp&biw=1436&bih=694&hl=cs-CZ&ved=0CAAQ5JsGahcKEwi4vu6G1-iTAxUAAAAAHQAAAAAQBA" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+          Číst všechny recenze na Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REZERVACE ===================== -->
+  <section class="reservation section" id="rezervace">
+    <div class="reservation__deco" aria-hidden="true">
+      <svg viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="130" cy="180" rx="100" ry="115" stroke="currentColor" stroke-width="1.5" opacity="0.1"/>
+        <path d="M130 65 C130 40, 156 24, 172 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.1"/>
+        <ellipse cx="162" cy="12" rx="28" ry="16" transform="rotate(-28 162 12)" stroke="currentColor" stroke-width="1.5" opacity="0.1"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="reservation__inner fade-up">
+        <div class="section-label center light">Rezervace</div>
+        <h2 class="center light">Zarezervujte si stůl</h2>
+        <p class="reservation__sub">
+          Momentálně rezervujeme telefonicky.<br />
+          Zavolejte nám — domluvíme se.
+        </p>
+        <a href="tel:+420774494171" class="reservation__phone">+420 774 494 171</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KONTAKT ===================== -->
+  <section class="contact section" id="kontakt">
+    <div class="contact__bg" aria-hidden="true">
+      <img src="assets/images/exterior-den.jpg" alt="" />
+    </div>
+    <div class="container">
+      <div class="section-label center fade-up">Kontakt</div>
+      <h2 class="center fade-up">Kde nás najdete</h2>
+      <div class="contact__grid">
+        <div class="contact__info fade-up">
+          <div class="contact__block">
+            <h3>Adresa</h3>
+            <p>Mařákova 651<br />Litomyšl 570 01</p>
+            <a href="https://maps.google.com/?q=Mařákova+651,+Litomyšl+570+01" class="btn btn--outline-light" target="_blank" rel="noopener noreferrer">Otevřít v mapách</a>
+          </div>
+          <div class="contact__block">
+            <h3>Sledujte nás</h3>
+            <a href="https://www.instagram.com/plums_restaurant/" class="contact__instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="19" height="19" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              @plums_restaurant
+            </a>
+          </div>
+          <div class="contact__block">
+            <h3>Rezervace restaurace</h3>
+            <a href="tel:+420774494171" class="contact__phone">+420 774 494 171</a>
+            <h3 style="margin-top: 18px;">Rezervace penzion</h3>
+            <a href="tel:+420603836642" class="contact__phone" style="font-size: clamp(18px, 2.2vw, 26px);">+420 603 836 642</a>
+          </div>
+          <div class="contact__block">
+            <h3>Otevírací doba</h3>
+            <p style="line-height: 2;">
+              Oběd &nbsp;&nbsp;&nbsp;&nbsp;11:00 – 15:00<br />
+              Večeře &nbsp;&nbsp;17:00 – 21:00<br />
+              <span style="color: var(--border); font-size: 13px; display: block; margin-top: 4px;">Pondělí zavřeno</span>
+            </p>
+            <p style="font-size: 13px; color: rgba(247,242,234,0.5); margin-top: 8px; line-height: 1.6;">
+              Víkendový oběd: týdenní menu a burger & hot dog nabídka.<br />
+              À la carte od večeře.
+            </p>
+          </div>
+        </div>
+        <div class="contact__map-placeholder fade-up">
+          <div class="map-box">
+            <img src="assets/images/logo.jpg" alt="Plums" class="map-logo" />
+            <p class="map-location">Litomyšl</p>
+            <a href="https://maps.google.com/?q=Mařákova+651,+Litomyšl+570+01" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Otevřít v Google Mapách</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== POUKAZY (proužek) ===================== -->
+  <section class="voucher-strip" id="poukazy">
+    <div class="container">
+      <div class="voucher-strip__inner fade-up">
+        <div class="voucher-strip__text">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true">
+            <path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>
+          </svg>
+          <span>Dárkové poukazy v hodnotě <strong>1 000 Kč</strong> — osobně nebo e-mailem</span>
+        </div>
+        <a href="poukazy.html" class="btn btn--primary">Více informací</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#" class="footer__logo">
+          <img src="assets/images/logo.jpg" alt="Plums Restaurant &amp; Penzion" />
+        </a>
+        <div class="footer__info">
+          <strong>Plums</strong> — Restaurace &amp; Penzion<br />
+          Litomyšl &nbsp;·&nbsp; <a href="tel:+420774494171">+420 774 494 171</a>
+        </div>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/plums_restaurant/" target="_blank" rel="noopener noreferrer" aria-label="Plums na Instagramu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__copy">© 2026 Plums Restaurant &amp; Penzion, Litomyšl</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+    // Skryj týdenní menu každou neděli
+    if (new Date().getDay() === 0) {
+      const h = document.getElementById('weeklyMenuHeading');
+      const f = document.querySelector('.menu-featured');
+      if (h) h.style.display = 'none';
+      if (f) f.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

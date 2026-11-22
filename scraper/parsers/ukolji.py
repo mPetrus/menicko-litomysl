@@ -1,10 +1,7 @@
 import re
 from datetime import date
 
-from . import DAYS, item, nearest_date, page_lines
-
-MONTHS = ["ledna", "února", "března", "dubna", "května", "června", "července",
-          "srpna", "září", "října", "listopadu", "prosince"]
+from . import DAYS, MONTHS, item, nearest_date, page_lines
 
 
 def _price(lines, pattern):

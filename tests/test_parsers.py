@@ -1,7 +1,7 @@
 from datetime import date
 from pathlib import Path
 
-from scraper.parsers import bohem, oaza, profirest, rettigovka, snyt, ukolji, umedveda, zlatahvezda
+from scraper.parsers import bohem, karlov, oaza, plums, profirest, rettigovka, snyt, ukolji, umedveda, zlatahvezda
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -183,3 +183,47 @@ def test_umedveda_pdf_week():
     assert days[3]["items"][5]["name"].endswith("domácí cib.chléb")
     # the permanent offer and children's menu after Friday are not part of the days
     assert len(days[4]["items"]) == 9
+
+
+def test_karlov_finds_this_weeks_image():
+    assert karlov.IMAGE.search(load("karlov.html"))[0].endswith("/karlov-16.11.-20.11.jpg")
+
+
+def test_karlov_ocr_week():
+    # karlov-ocr.txt is Tesseract's output for the menu image, made on GitHub
+    days = karlov.parse_text(load("karlov-ocr.txt"))
+    assert [d["date"] for d in days] == [
+        "2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20"]
+    mon = days[0]["items"]
+    assert mon[0] == {"type": "soup", "label": None, "name": "Čočková s párkem", "price": None,
+                      "allergens": ["1"]}
+    assert mon[1] == {"type": "main", "label": None, "name": "Fish and Chips, česneková majonéza",
+                      "price": 179, "allergens": ["1", "4", "10"]}
+    # weekly tip and dessert are offered every day
+    assert mon[-2:] == [
+        {"type": "main", "label": "Tip týdne",
+         "name": "Steak z kotlety DUROC s liškovou omáčkou a pečenou bramborovou kaší",
+         "price": 275, "allergens": ["1", "7"]},
+        {"type": "dessert", "label": None, "name": "Creme brulée s ovocem", "price": 85, "allergens": None},
+    ]
+    assert len(mon) == 6 and all(len(d["items"]) == 6 for d in days)
+    assert days[1]["items"][0]["name"] == "Hovězí vývar s bylinkovým kapáním"
+    assert days[4]["items"][3] == {"type": "main", "label": None,
+                                   "name": "Vepřový řízek XXL s bramborovou kaší, okurkový salátek",
+                                   "price": 189, "allergens": None}
+
+
+def test_plums_week_dates_skip_closed_monday():
+    assert plums.week_dates(load("plums.html"), today=date(2026, 11, 22)) == [
+        "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"]
+
+
+def test_plums_ocr_items():
+    items = plums.parse_items(load("plums-ocr.txt"))
+    assert [i["type"] for i in items] == ["soup"] * 2 + ["main"] * 5 + ["dessert"]
+    assert items[0] == {"type": "soup", "label": None,
+                        "name": "Kuřecí vývar, Krupicové kapání - květák - trhané kuřecí maso",
+                        "price": 65, "allergens": None}
+    assert items[5]["name"] == "Flank steak, Celerové pyré - pečený celer na másle - miso omáčka celerové chipsy"
+    assert items[5]["price"] == 390
+    assert items[-1]["price"] == 119

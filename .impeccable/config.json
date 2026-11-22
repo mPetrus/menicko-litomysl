@@ -1,0 +1,197 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "buried-raster",
+        "value": "*",
+        "files": [
+          "tests/fixtures/umedveda.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.412Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/umedveda.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.439Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/rettigovka.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.465Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "tests/fixtures/rettigovka.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.491Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "tests/fixtures/oaza.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.518Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/oaza.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.545Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "tests/fixtures/oaza.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.573Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/snyt.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.600Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "tests/fixtures/danicola.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.626Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "tests/fixtures/danicola.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.653Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/danicola.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.680Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "tests/fixtures/underground.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.707Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "tests/fixtures/underground.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.734Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/underground.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.761Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/bohem.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.789Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/ukolji.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.816Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "tests/fixtures/ukolji.html"
+        ],
+        "createdAt": "2026-11-21T14:01:36.843Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "tests/fixtures/plums.html"
+        ],
+        "createdAt": "2026-11-22T09:49:40.360Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "tests/fixtures/plums.html"
+        ],
+        "createdAt": "2026-11-22T09:49:40.388Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/plums.html"
+        ],
+        "createdAt": "2026-11-22T09:49:40.414Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "tests/fixtures/karlov.html"
+        ],
+        "createdAt": "2026-11-22T09:49:40.438Z",
+        "reason": "Claude: saved copy of a third-party restaurant page used as a parser test fixture, not this project's design"
+      }
+    ]
+  }
+}

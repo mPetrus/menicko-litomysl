@@ -1,4 +1,4 @@
-from .parsers import bohem, oaza, profirest, rettigovka, snyt, ukolji, umedveda, zlatahvezda
+from .parsers import bohem, karlov, oaza, plums, profirest, rettigovka, snyt, ukolji, umedveda, zlatahvezda
 
 RESTAURANTS = [
     {"id": "ukolji", "name": "U Kolji", "url": "https://ukolji.cz/",
@@ -20,4 +20,9 @@ RESTAURANTS = [
      "menu_url": "http://www.rettigovka.eu/is/eu/index.php", "parse": rettigovka.parse},
     {"id": "umedveda", "name": "U Medvěda", "url": "https://www.umedveda.cz/",
      "menu_url": "https://www.umedveda.cz/poledni-menu/", "parse": umedveda.parse},
+    # menus below are images read with OCR (Tesseract runs in the GitHub workflow only)
+    {"id": "karlov", "name": "Karlov", "url": "https://www.restauracekarlov.cz/",
+     "menu_url": "https://www.restauracekarlov.cz/", "parse": karlov.parse},
+    {"id": "plums", "name": "Plums", "url": "https://www.plumsrestaurant.cz/",
+     "menu_url": "https://www.plumsrestaurant.cz/", "parse": plums.parse},
 ]
