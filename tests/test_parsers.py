@@ -193,8 +193,8 @@ def test_plums_ocr_items():
     items = plums.parse_items(load("plums-ocr.txt"))
     assert [i["type"] for i in items] == ["soup"] * 2 + ["main"] * 5 + ["dessert"]
     assert items[0] == {"type": "soup", "label": None,
-                        "name": "Kuřecí vývar, Krupicové kapání - květák - trhané kuřecí maso",
+                        "name": "Kuřecí vývar, krupicové kapání, květák, trhané kuřecí maso",
                         "price": 65, "allergens": None}
-    assert items[5]["name"] == "Flank steak, Celerové pyré - pečený celer na másle - miso omáčka celerové chipsy"
+    assert items[5]["name"] == "Flank steak, celerové pyré, pečený celer na másle, miso omáčka celerové chipsy"
     assert items[5]["price"] == 390
     assert items[-1]["price"] == 119

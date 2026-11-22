@@ -37,8 +37,9 @@ def parse_items(text):
         if line in SECTIONS:
             section, parts = SECTIONS[line], []
         elif section and (m := re.fullmatch(r"(\d+) Kč", line)):
-            items.append(item(section, f"{parts[0]}, {' '.join(parts[1:])}" if parts[1:] else parts[0],
-                              int(m[1])))
+            desc = " ".join(parts[1:]).replace(" - ", ", ")  # the image separates with "·", OCR reads "-"
+            name = f"{parts[0]}, {desc[:1].lower()}{desc[1:]}" if desc else parts[0]
+            items.append(item(section, name, int(m[1])))
             parts = []
         elif section and line:
             parts.append(line)

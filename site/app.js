@@ -78,6 +78,8 @@ function renderCard(r, query) {
     const p = el("p", "note", text + " ");
     const link = el("a", null, "Podívejte se na web restaurace");
     link.href = r.menu_url;
+    link.target = "_blank";
+    link.rel = "noopener";
     p.append(link);
     return p;
   };
@@ -130,5 +132,6 @@ fetch("menus.json", { cache: "no-cache" })
     render();
   })
   .catch(() => {
-    document.getElementById("menus").textContent = "Menu se nepodařilo načíst.";
+    const p = el("p", "note warn", "Menu se nepodařilo načíst. Zkuste stránku obnovit.");
+    document.getElementById("menus").replaceChildren(p);
   });
