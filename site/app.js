@@ -14,14 +14,32 @@ let data, selectedDate;
 const hasMatch = (date, query) => data.restaurants.some((r) =>
   r.days.some((d) => d.date === date && d.items.some((i) => norm(i.name).includes(query))));
 
+function dayButton(date) {
+  const d = new Date(date + "T12:00");
+  const name = date === iso(new Date()) ? "Dnes" : DAY_NAMES[d.getDay()];
+  const b = el("button", null, `${name} ${d.getDate()}.${d.getMonth() + 1}.`);
+  b.onclick = () => { selectedDate = date; render(); };
+  return b;
+}
+
 function renderDays(dates, query) {
-  const nav = document.getElementById("days");
-  nav.replaceChildren(...dates.map((date) => {
-    const d = new Date(date + "T12:00");
-    const b = el("button", null, `${DAY_NAMES[d.getDay()]} ${d.getDate()}.${d.getMonth() + 1}.`);
+  document.getElementById("days").replaceChildren(...dates.map((date) => {
+    const b = dayButton(date);
     b.setAttribute("aria-pressed", date === selectedDate);
     if (query && !hasMatch(date, query)) b.classList.add("no-match");
-    b.onclick = () => { selectedDate = date; render(); };
+    return b;
+  }));
+}
+
+// a search with no hit on the selected day points to the days that have it
+function renderEmpty(p, dates, query) {
+  const typed = document.getElementById("search").value.trim();
+  const other = query ? dates.filter((d) => hasMatch(d, query)) : [];
+  if (!query) return p.replaceChildren("Nic nenalezeno.");
+  if (!other.length) return p.replaceChildren(`„${typed}“ tento týden nikde nevaří. Zkuste jiné slovo.`);
+  p.replaceChildren(`„${typed}“ v tento den nikde nevaří, ale najdete to tady:`, ...other.map((date) => {
+    const b = dayButton(date);
+    b.onclick = () => { selectedDate = date; render(); document.querySelector("#days [aria-pressed=true]").focus(); };
     return b;
   }));
 }
@@ -87,7 +105,9 @@ function render() {
   const cards = data.restaurants.map((r) => renderCard(r, query)).filter(Boolean)
     .sort((a, b) => !!b.querySelector("ul") - !!a.querySelector("ul")); // restaurants with food first
   document.getElementById("menus").replaceChildren(...cards);
-  document.getElementById("empty").hidden = cards.length > 0;
+  const empty = document.getElementById("empty");
+  empty.hidden = cards.length > 0;
+  if (!cards.length) renderEmpty(empty, dates, query);
 }
 
 fetch("menus.json", { cache: "no-cache" })

@@ -84,7 +84,7 @@ input[type=search] {
 input[type=search]::placeholder { color: var(--muted); }
 input[type=search]:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent) 22%, transparent); }
 nav { display: flex; gap: 6px; margin-top: 10px; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
-nav button {
+nav button, .empty button {
   flex: 0 0 auto;
   padding: 8px 14px;
   font: inherit;
@@ -95,8 +95,8 @@ nav button {
   border-radius: 999px;
   cursor: pointer;
 }
-nav button:hover { border-color: var(--accent); }
-nav button.no-match { opacity: .4; }
+nav button:hover, .empty button:hover { border-color: var(--accent); }
+nav button.no-match:not([aria-pressed=true]) { opacity: .4; }
 nav button[aria-pressed=true] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
 
 .card {
@@ -139,6 +139,8 @@ li .price { margin-left: auto; font-weight: 600; white-space: nowrap; font-varia
 li .allergens { flex-basis: 100%; color: var(--muted); font-size: var(--meta); }
 li.soup .allergens, li.dessert .allergens { color: inherit; opacity: .85; }
 .note, .empty { margin: 6px 0 0; color: var(--muted); font-size: var(--control); }
+.empty { color: var(--text); line-height: 1.6; }
+.empty button { margin: 8px 6px 0 0; }
 .note a { color: var(--accent); text-underline-offset: 3px; }
 /* "could not load / not updated" notes carry a link to the restaurant */
 .note:has(a) { padding: 8px 12px; background: var(--warn); color: var(--warn-text); border-radius: 6px; }
