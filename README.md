@@ -2,8 +2,8 @@
 
 Daily lunch menus from Litomyšl restaurants on one page, with search. The menus come from each restaurant's own website (never from menicka.cz).
 
-Restaurants: U Kolji, Zlatá Hvězda, Bohém (Hotel Aplaus), Underground, Da Nicola, Šnyt, Oáza zdraví, Rettigovka, U Medvěda (from its weekly PDF), Karlov and Plums (menu images read with Tesseract OCR in the GitHub workflow; not runnable on an Intel Mac, where Homebrew cannot build Tesseract).
-Not included: Veselka (only a menicka.cz widget).
+Restaurants: U Kolji, Bohém (Hotel Aplaus), Underground, Da Nicola, Šnyt, Oáza zdraví, Rettigovka, U Medvěda (from its weekly PDF), Karlov and Plums (menu images read with Tesseract OCR in the GitHub workflow; not runnable on an Intel Mac, where Homebrew cannot build Tesseract).
+Not included: Veselka (only a menicka.cz widget), Zlatá Hvězda (shows a CAPTCHA to GitHub and Cloudflare).
 
 ## How it works
 - `scraper/` downloads each restaurant's menu page and parses it into `site/menus.json`.
@@ -12,8 +12,6 @@ Not included: Veselka (only a menicka.cz widget).
 
 ## Proxy for blocked sites
 Underground and Da Nicola drop connections from GitHub's servers, so they are fetched through a Cloudflare Worker (`proxy/worker.js`, deployed at `menicko-proxy.martin-norty.workers.dev`). It only forwards the hosts listed in `ALLOWED`. To redeploy after a change: `cd proxy && npx wrangler deploy`.
-Zlatá Hvězda shows a CAPTCHA to both GitHub and Cloudflare, so the site only links to it.
-
 ## Run locally
 ```bash
 python3 -m venv .venv
