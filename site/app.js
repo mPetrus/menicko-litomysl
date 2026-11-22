@@ -147,7 +147,11 @@ function render() {
   renderDays(dates, query);
   const cards = data.restaurants.map((r) => renderCard(r, query)).filter(Boolean)
     .sort((a, b) => rank(b) - rank(a));
-  document.getElementById("menus").replaceChildren(...cards);
+  // restaurants without food today are grouped below the menus as a compact block
+  const closed = el("div", "closed");
+  closed.append(...cards.filter((c) => !c.querySelector("ul")));
+  document.getElementById("menus").replaceChildren(
+    ...cards.filter((c) => c.querySelector("ul")), ...(closed.children.length ? [closed] : []));
   const empty = document.getElementById("empty");
   empty.hidden = cards.length > 0;
   if (!cards.length) renderEmpty(empty, dates, query);
