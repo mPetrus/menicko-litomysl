@@ -30,7 +30,8 @@
   }
 }
 ::selection { background: color-mix(in oklch, var(--red) 30%, transparent); }
-:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+/* red ring with a paper band around it: red alone is under 3:1 on the ochre wall and the black/ochre name blocks */
+:focus-visible { outline: 3px solid var(--red); outline-offset: 0; box-shadow: 0 0 0 6px var(--paper); }
 
 /* Grenze is the cut letter (title, restaurant names, dish labels); everything read at length stays in the system face.
    Type scale: 13 meta / 15 controls / 16 body / 18 dish label / 19 closed restaurant / 24 restaurant / 34 title. */
@@ -83,9 +84,9 @@ input[type=search] {
   caret-color: var(--red);
 }
 input[type=search]::placeholder { color: var(--muted); }
-input[type=search]:focus { outline: 3px solid var(--red); outline-offset: 0; }
 
-nav { --bg-band: var(--ground); display: flex; gap: 8px; padding: 12px 0; overflow-x: auto;
+/* 8px side padding pulled back by margin: the scroll box would otherwise clip the focus ring of the first and last day */
+nav { --bg-band: var(--ground); display: flex; gap: 8px; padding: 12px 8px; margin-inline: -8px; overflow-x: auto;
   scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
 nav button, .empty button {
   flex: 0 0 auto;
@@ -102,6 +103,7 @@ nav button:active, .empty button:active { transform: translateY(1px); transition
 nav button.no-match:not([aria-pressed=true]) { opacity: .45; }
 nav button[aria-pressed=true] { background: var(--red); border-color: var(--line); color: var(--on-red);
   box-shadow: inset 0 0 0 2px var(--paper); }
+nav button[aria-pressed=true]:focus-visible { box-shadow: inset 0 0 0 2px var(--paper), 0 0 0 6px var(--paper); }
 
 /* wide screens: title and search share the band's row, and the whole header stays pinned */
 @media (min-width: 1000px) {

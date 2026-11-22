@@ -205,7 +205,7 @@ Small paper tickets in a black cut border.
 
 ### Search Field
 - **Style:** paper field in the black band, no border, 3px radius, 10px 12px padding, red caret.
-- **Focus:** 3px solid red outline, no offset.
+- **Focus:** 3px solid red outline, no offset, with a 3px paper band outside it (every focusable control, so the ring holds 3:1 on the ochre wall and the black/ochre name blocks).
 
 ### Menu Card
 The signature: a paper block in a cut frame, headed by the restaurant name cut out of black.
