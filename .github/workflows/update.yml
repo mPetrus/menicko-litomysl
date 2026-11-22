@@ -44,3 +44,7 @@ jobs:
           path: site
       - id: deploy
         uses: actions/deploy-pages@v4
+      # the site is already published; a red run makes GitHub email the owner about a broken restaurant
+      - name: Fail when a restaurant could not be read
+        run: |
+          python -c "import json, sys; bad = [r['id'] for r in json.load(open('site/menus.json'))['restaurants'] if r['status'] != 'ok' or r.get('stale')]; print('not read:', bad or 'none'); sys.exit(bool(bad))"

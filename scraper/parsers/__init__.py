@@ -4,11 +4,20 @@ import tempfile
 from datetime import date
 from pathlib import Path
 
+import requests
 from bs4 import BeautifulSoup
 
 DAYS = ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek"]
 MONTHS = ["ledna", "února", "března", "dubna", "května", "června", "července",
           "srpna", "září", "října", "listopadu", "prosince"]
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; menicko-litomysl/1.0)"}
+
+
+def fetch(url, **params):
+    """GET with the scraper's User-Agent; raises on HTTP errors."""
+    resp = requests.get(url, headers=HEADERS, timeout=30, **params)
+    resp.raise_for_status()
+    return resp
 
 
 def ocr(image, *convert_args):
@@ -32,7 +41,18 @@ def page_lines(html):
 
 def nearest_date(day, month, today):
     """For dates printed without a year: the year that puts the date nearest to today."""
-    return min((date(today.year + dy, month, day) for dy in (-1, 0, 1)), key=lambda d: abs(d - today))
+    candidates = []
+    for year in (today.year - 1, today.year, today.year + 1):
+        try:
+            candidates.append(date(year, month, day))
+        except ValueError:  # 29 February outside a leap year
+            pass
+    return min(candidates, key=lambda d: abs(d - today))
+
+
+def week_monday(day, month, end_month, year):
+    """First day of a week heading like "29. 12. – 2. 1. 2027": the printed year belongs to the last day."""
+    return date(year - (month > end_month), month, day)
 
 
 def item(type_, name, price=None, label=None):

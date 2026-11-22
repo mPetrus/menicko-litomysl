@@ -1,7 +1,7 @@
 import re
-from datetime import date, timedelta
+from datetime import timedelta
 
-from . import item, page_lines
+from . import item, page_lines, week_monday
 
 DAYS = ["pondělí", "úterý", "středa", "čtvrtek", "pátek"]
 
@@ -11,8 +11,7 @@ def parse(html):
     # e.g. "Jídelní lístek 23. 11. - 27. 11. 2026"; the year belongs to the last day
     m = next(m for line in lines if (m := re.fullmatch(
         r"Jídelní lístek (\d{1,2})\. (\d{1,2})\. - \d{1,2}\. (\d{1,2})\. (\d{4})", line)))
-    day, month, end_month, year = map(int, m.groups())
-    monday = date(year - (month > end_month), month, day)
+    monday = week_monday(*map(int, m.groups()))
 
     days, current = [], None
     for i, line in enumerate(lines):

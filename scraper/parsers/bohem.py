@@ -1,7 +1,7 @@
 import re
-from datetime import date, timedelta
+from datetime import timedelta
 
-from . import DAYS, item, page_lines
+from . import DAYS, item, page_lines, week_monday
 
 
 def parse(html):
@@ -9,8 +9,7 @@ def parse(html):
     # e.g. "Polední menu (16. 11. – 20. 11. 2026)"; the year belongs to the last day
     i, m = next((i, m) for i, line in enumerate(lines) if (m := re.fullmatch(
         r"Polední menu \((\d{1,2})\. ?(\d{1,2})\. ?– ?\d{1,2}\. ?(\d{1,2})\. ?(\d{4})\)", line)))
-    day, month, end_month, year = map(int, m.groups())
-    monday = date(year - (month > end_month), month, day)
+    monday = week_monday(*map(int, m.groups()))
 
     # one menu for the whole week: weight line, name, description lines, price line
     items, parts = [], []

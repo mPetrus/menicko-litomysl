@@ -3,19 +3,16 @@ import re
 from datetime import date
 from io import BytesIO
 
-import requests
 from pypdf import PdfReader
 
-from . import DAYS, item, nearest_date
+from . import DAYS, fetch, item, nearest_date
 
 # the weekday menu; the page also links a weekend offer PDF
 PDF_LINK = re.compile(r'https://www\.umedveda\.cz/[^"]*Poledni_menu[^"]*\.pdf')
 
 
 def parse(html, today=None):
-    resp = requests.get(PDF_LINK.search(html)[0], headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
-    resp.raise_for_status()
-    return parse_pdf(resp.content, today)
+    return parse_pdf(fetch(PDF_LINK.search(html)[0]).content, today)
 
 
 def parse_pdf(data, today=None):

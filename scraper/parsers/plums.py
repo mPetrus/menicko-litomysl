@@ -2,19 +2,15 @@
 import re
 from datetime import date, timedelta
 
-import requests
-
-from . import MONTHS, item, nearest_date, ocr
+from . import MONTHS, fetch, item, nearest_date, ocr
 
 IMAGE = "https://www.plumsrestaurant.cz/assets/images/menu-tydenni.jpeg"
 SECTIONS = {"polévky": "soup", "hlavní chody": "main", "dezert": "dessert"}
 
 
 def parse(html, today=None):
-    resp = requests.get(IMAGE, headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
-    resp.raise_for_status()
     # white text on brown: the threshold is what makes "119 Kč" read correctly
-    items = parse_items(ocr(resp.content, "-resize", "300%", "-colorspace", "Gray", "-negate", "-threshold", "50%"))
+    items = parse_items(ocr(fetch(IMAGE).content, "-resize", "300%", "-colorspace", "Gray", "-negate", "-threshold", "50%"))
     return [{"date": d, "items": items} for d in week_dates(html, today)] if items else []
 
 

@@ -4,12 +4,10 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-import requests
-
+from .parsers import fetch
 from .restaurants import RESTAURANTS
 
 OUT = Path(__file__).resolve().parent.parent / "site" / "menus.json"
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; menicko-litomysl/1.0)"}
 # Cloudflare Worker (proxy/worker.js) for sites whose firewall drops GitHub's servers
 PROXY = "https://menicko-proxy.martin-norty.workers.dev/"
 
@@ -18,11 +16,7 @@ def scrape(restaurant):
     entry = {k: restaurant[k] for k in ("id", "name", "url", "menu_url")}
     try:
         url = restaurant["menu_url"]
-        if restaurant.get("proxy"):
-            resp = requests.get(PROXY, params={"url": url}, headers=HEADERS, timeout=30)
-        else:
-            resp = requests.get(url, headers=HEADERS, timeout=30)
-        resp.raise_for_status()
+        resp = fetch(PROXY, params={"url": url}) if restaurant.get("proxy") else fetch(url)
         resp.encoding = "utf-8"
         days = restaurant["parse"](resp.text)
         if not days:

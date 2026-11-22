@@ -203,3 +203,15 @@ def test_plums_ocr_items():
 def test_plums_keeps_abbreviation_at_description_start():
     text = "hlavní chody\nKuřecí křídla\nBBQ omáčka - hranolky\n189 Kč"
     assert plums.parse_items(text)[0]["name"] == "Kuřecí křídla, BBQ omáčka, hranolky"
+
+
+def test_nearest_date_on_29_february():
+    from scraper.parsers import nearest_date
+    assert nearest_date(29, 2, date(2028, 2, 27)) == date(2028, 2, 29)
+
+
+def test_week_monday_across_new_year():
+    # headings like "29. 12. – 2. 1. 2027": the printed year belongs to the last day
+    from scraper.parsers import week_monday
+    assert week_monday(29, 12, 1, 2027) == date(2026, 12, 29)
+    assert week_monday(23, 11, 11, 2026) == date(2026, 11, 23)

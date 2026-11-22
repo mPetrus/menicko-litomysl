@@ -1,19 +1,15 @@
 """Karlov publishes its weekly menu only as an image; it is read with OCR."""
 import re
-from datetime import date, timedelta
+from datetime import timedelta
 
-import requests
-
-from . import DAYS, item, ocr
+from . import DAYS, fetch, item, ocr, week_monday
 
 IMAGE = re.compile(r'https://www\.restauracekarlov\.cz/wp-content/uploads/[^"]*/karlov-\d[^"]*\.jpe?g')
 UPPER_DAYS = [d.upper() for d in DAYS]
 
 
 def parse(html):
-    resp = requests.get(IMAGE.search(html)[0], headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
-    resp.raise_for_status()
-    return parse_text(ocr(resp.content, "-resize", "300%", "-colorspace", "Gray"))
+    return parse_text(ocr(fetch(IMAGE.search(html)[0]).content, "-resize", "300%", "-colorspace", "Gray"))
 
 
 def _allergens(text):
@@ -27,8 +23,7 @@ def parse_text(text):
     # e.g. "16. 11.—20. 11. 2026 - polévka v ceně menu"; the year belongs to the last day
     m = next(m for line in lines if (m := re.search(
         r"(\d{1,2})\. ?(\d{1,2})\.\s*[—–-]\s*\d{1,2}\. ?(\d{1,2})\. (\d{4})", line)))
-    day, month, end_month, year = map(int, m.groups())
-    monday = date(year - (month > end_month), month, day)
+    monday = week_monday(*map(int, m.groups()))
 
     days, weekly, section = [], [], None
     for line in lines:
