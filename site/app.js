@@ -11,6 +11,32 @@ const el = (tag, cls, text) => {
 
 let data, selectedDate;
 
+// favourite restaurants live only in this browser; storage can be blocked (private mode), so never rely on it
+const FAV_KEY = "menicko-favorites";
+let favorites = new Set();
+try { favorites = new Set(JSON.parse(localStorage.getItem(FAV_KEY)) || []); } catch {}
+
+function toggleFavorite(id) {
+  if (!favorites.delete(id)) favorites.add(id);
+  try { localStorage.setItem(FAV_KEY, JSON.stringify([...favorites])); } catch {}
+  render();
+  document.querySelector(`.fav[data-id="${id}"]`)?.focus(); // the card moved; keep keyboard focus on its heart
+}
+
+const HEART = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+
+function favButton(r) {
+  const on = favorites.has(r.id);
+  const b = el("button", "fav");
+  b.innerHTML = HEART;
+  b.dataset.id = r.id;
+  b.setAttribute("aria-pressed", on);
+  b.setAttribute("aria-label", `${r.name}: ${on ? "odebrat z oblíbených" : "přidat do oblíbených"}`);
+  b.title = on ? "Odebrat z oblíbených" : "Přidat do oblíbených";
+  b.onclick = () => toggleFavorite(r.id);
+  return b;
+}
+
 const hasMatch = (date, query) => data.restaurants.some((r) =>
   r.days.some((d) => d.date === date && d.items.some((i) => norm(i.name).includes(query))));
 
@@ -72,7 +98,10 @@ function renderCard(r, query) {
   a.target = "_blank";
   a.rel = "noopener";
   h2.append(a);
-  card.append(h2);
+  const head = el("div", "card-head");
+  head.append(h2, favButton(r));
+  card.append(head);
+  if (favorites.has(r.id)) card.dataset.fav = "";
 
   const note = (text) => {
     const p = el("p", "note", text + " ");
@@ -105,6 +134,9 @@ function renderCard(r, query) {
   return card;
 }
 
+// restaurants with food first, favourites first within each group (sort is stable: list order otherwise)
+const rank = (card) => 2 * !!card.querySelector("ul") + ("fav" in card.dataset);
+
 function render() {
   const today = iso(new Date());
   const dates = [...new Set(data.restaurants.flatMap((r) => r.days.map((d) => d.date)))]
@@ -114,7 +146,7 @@ function render() {
   const query = norm(document.getElementById("search").value.trim());
   renderDays(dates, query);
   const cards = data.restaurants.map((r) => renderCard(r, query)).filter(Boolean)
-    .sort((a, b) => !!b.querySelector("ul") - !!a.querySelector("ul")); // restaurants with food first
+    .sort((a, b) => rank(b) - rank(a));
   document.getElementById("menus").replaceChildren(...cards);
   const empty = document.getElementById("empty");
   empty.hidden = cards.length > 0;

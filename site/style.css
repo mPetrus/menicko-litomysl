@@ -113,12 +113,23 @@ nav button[aria-pressed=true] { background: var(--accent); border-color: var(--a
 .card h2 { margin: 0 0 8px; font-size: 1.3125rem; line-height: 1.2; }
 .card h2 a { color: var(--text); text-decoration: none; }
 .card h2 a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+/* name + favourite heart; the heart sits in the price column on full cards, right after the name on empty ones */
+.card-head { display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
+.card-head h2 { margin: 0; flex: 1; }
+.fav { display: grid; place-items: center; flex: none; width: 36px; height: 36px; margin: -6px -8px -6px 0;
+  padding: 0; border: 0; border-radius: 999px; background: none; color: var(--muted); cursor: pointer; }
+.fav svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+.fav:hover, .fav[aria-pressed=true] { color: var(--accent); }
+.fav[aria-pressed=true] svg { fill: currentColor; }
+.fav:active svg { transform: scale(.85); transition: transform 100ms; }
 /* a restaurant with nothing to eat today steps back */
 .card:not(:has(ul)) { background: transparent; border-style: dashed; padding-block: 10px;
   display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; }
 .card:not(:has(ul)) .note { margin: 0; }
 .card:not(:has(ul)) .note:has(a) { flex-basis: 100%; margin-top: 6px; }
 .card:not(:has(ul)) h2 { margin: 0; font-size: 1.0625rem; }
+.card:not(:has(ul)) .card-head { margin: 0; }
+.card:not(:has(ul)) .card-head h2 { flex: none; }
 .card:not(:has(ul)) h2 a { color: var(--muted); }
 ul { list-style: none; margin: 0; padding: 0; }
 li {
