@@ -14,11 +14,20 @@ let data, selectedDate;
 const hasMatch = (date, query) => data.restaurants.some((r) =>
   r.days.some((d) => d.date === date && d.items.some((i) => norm(i.name).includes(query))));
 
+// switching day moves along the week: menus enter from the side of time (see style.css)
+function goToDay(date) {
+  const dir = date > selectedDate ? "later" : "earlier";
+  selectedDate = date;
+  if (!document.startViewTransition) return Promise.resolve(render());
+  document.documentElement.dataset.dayDir = dir;
+  return document.startViewTransition(render).updateCallbackDone;
+}
+
 function dayButton(date) {
   const d = new Date(date + "T12:00");
   const name = date === iso(new Date()) ? "Dnes" : DAY_NAMES[d.getDay()];
   const b = el("button", null, `${name} ${d.getDate()}.${d.getMonth() + 1}.`);
-  b.onclick = () => { selectedDate = date; render(); };
+  b.onclick = () => goToDay(date);
   return b;
 }
 
@@ -39,7 +48,7 @@ function renderEmpty(p, dates, query) {
   if (!other.length) return p.replaceChildren(`„${typed}“ tento týden nikde nevaří. Zkuste jiné slovo.`);
   p.replaceChildren(`„${typed}“ v tento den nikde nevaří, ale najdete to tady:`, ...other.map((date) => {
     const b = dayButton(date);
-    b.onclick = () => { selectedDate = date; render(); document.querySelector("#days [aria-pressed=true]").focus(); };
+    b.onclick = () => goToDay(date).then(() => document.querySelector("#days [aria-pressed=true]").focus());
     return b;
   }));
 }

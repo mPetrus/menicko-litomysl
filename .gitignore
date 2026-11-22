@@ -4,3 +4,4 @@ __pycache__/
 site/menus.json
 .wrangler/
 proxy/.wrangler/
+.impeccable/review/
