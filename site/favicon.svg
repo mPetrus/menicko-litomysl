@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<!-- the site in one glance: the Grenze M cut in black on the ochre wall, inside a black frame -->
+<rect x="2" y="2" width="60" height="60" rx="5" fill="#dca039" stroke="#17130f" stroke-width="4"/>
+<path transform="translate(11.19 47.01) scale(0.04920 -0.04920)" fill="#17130f" d="M16 0V65L77 89L96 521L36 545V610H304L416 227H428L540 610H810V545L749 521L769 89L829 65V0H529V73L598 97L591 386H582Q577 365 571 340Q565 315 558 291Q551 267 545 248L471 38Q449 34 424 30Q399 27 380 24Q361 22 358 22Q357 22 349 26Q342 30 336 34L260 251Q254 271 246 296Q239 320 233 344Q227 369 223 386H214L204 97L273 73V0Z"/>
+</svg>
