@@ -2,7 +2,10 @@ name: Update menus
 
 on:
   schedule:
-    - cron: "0 6,9 * * 1-5"  # UTC: 7:00 and 10:00 Prague time in winter (8:00/11:00 in summer)
+    # UTC: 6:23, 7:53 and 9:23 Prague time in winter (an hour later in summer). Off the full hour and three
+    # times, because GitHub delays and sometimes drops scheduled runs (it skipped 7:00 on 23 Nov 2026)
+    - cron: "23 5,8 * * 1-5"
+    - cron: "53 6 * * 1-5"
   workflow_dispatch:
   push:
     branches: [main]

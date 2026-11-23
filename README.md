@@ -8,7 +8,7 @@ Not included: Veselka (only a menicka.cz widget), Zlatá Hvězda (shows a CAPTCH
 ## How it works
 - `scraper/` downloads each restaurant's menu page and parses it into `site/menus.json`.
 - `site/` is a static page (`index.html`, `app.js`, `style.css`) that renders that JSON.
-- `.github/workflows/update.yml` runs the scraper every weekday at 7:00 and 10:00 (Prague, winter time) and publishes `site/` to Cloudflare Pages.
+- `.github/workflows/update.yml` runs the scraper every weekday at 6:23, 7:53 and 9:23 (Prague, winter time; GitHub sometimes delays or skips a scheduled run, hence three) and publishes `site/` to Cloudflare Pages.
 
 ## Proxy for blocked sites
 Underground and Da Nicola drop connections from GitHub's servers, so they are fetched through a Cloudflare Worker (`proxy/worker.js`, deployed at `menicko-proxy.martin-norty.workers.dev`). It only forwards the hosts listed in `ALLOWED`. To redeploy after a change: `cd proxy && npx wrangler deploy`.
