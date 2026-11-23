@@ -4,7 +4,9 @@ from datetime import timedelta
 
 from . import DAYS, fetch, item, ocr, week_monday
 
-IMAGE = re.compile(r'https://www\.restauracekarlov\.cz/wp-content/uploads/[^"]*/karlov-\d[^"]*\.jpe?g')
+# the file name changes week to week ("karlov-16.11.-20.11.jpg", "menu-karlova-23.11.-27.11.jpg");
+# the week's date range in it is what stays
+IMAGE = re.compile(r'https://www\.restauracekarlov\.cz/wp-content/uploads/[^"]*/[^"/]*\d{1,2}\.\d{1,2}\.-\d{1,2}\.\d{1,2}[^"/]*\.jpe?g')
 UPPER_DAYS = [d.upper() for d in DAYS]
 
 

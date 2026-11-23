@@ -165,6 +165,13 @@ def test_karlov_finds_this_weeks_image():
     assert karlov.IMAGE.search(load("karlov.html"))[0].endswith("/karlov-16.11.-20.11.jpg")
 
 
+def test_karlov_finds_image_whatever_its_name_by_the_week_dates():
+    # week of 23 Nov 2026 was named differently; the permanent menus share the page
+    html = ('<img src="https://www.restauracekarlov.cz/wp-content/uploads/2026/10/jidelni-listek-scaled.jpg">'
+            '<img src="https://www.restauracekarlov.cz/wp-content/uploads/2026/11/menu-karlova-23.11.-27.11.jpg">')
+    assert karlov.IMAGE.search(html)[0].endswith("/menu-karlova-23.11.-27.11.jpg")
+
+
 def test_karlov_ocr_week():
     # karlov-ocr.txt is Tesseract's output for the menu image, made on GitHub
     days = karlov.parse_text(load("karlov-ocr.txt"))
